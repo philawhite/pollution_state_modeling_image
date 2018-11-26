@@ -1,0 +1,1182 @@
+\documentclass[alpha-refs]{wiley-article}
+\usepackage{amsmath}
+\usepackage{graphicx}%
+\usepackage{amsfonts}%
+\usepackage{amssymb}
+\usepackage{pdflscape}
+\usepackage{floatrow}
+\usepackage{blindtext}
+
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+%\usepackage[utf8]{inputenc}
+%\usepackage[eng14lish]{babel}
+ \usepackage{natbib}
+%\usepackage{float}
+\usepackage{floatrow}
+\usepackage{subcaption}
+%\usepackage{pdflscape}
+%\usepackage{afterpage}
+%\usepackage{lscape}
+%\usepackage{longtable}
+%\usepackage{rotating}
+%\usepackage{authblk}
+\allowdisplaybreaks
+
+\usepackage{enumitem}
+%\usepackage{unicode-math}
+%\usepackage{amsthm}
+\usepackage{setspace}
+%\linespread{1.5}
+%\usepackage{algorithm}% http://ctan.org/pkg/algorithms
+%\usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
+\usepackage{caption}
+\usepackage{blindtext}
+\usepackage{multirow}
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]
+%\usepackage[margin=1in]{geometry}
+%\theoremstyle{plain}
+%\newtheorem{theorem}{Theorem}
+
+\newcommand{\blam}{ \mbox{\boldmath $ \lambda $} }
+\newcommand{\bet}{ \mbox{\boldmath $ \eta $} }
+\newcommand{\bome}{ \mbox{\boldmath $ \omega $} }
+\newcommand{\bbet}{ \mbox{\boldmath $ \beta $} }
+\newcommand{\bbeta}{ \mbox{\boldmath $ \beta $} }
+\newcommand{\balph}{ \mbox{\boldmath $ \alpha $} }
+\newcommand{\balpha}{ \mbox{\boldmath $ \alpha $} }
+\newcommand{\bphi}{ \mbox{\boldmath $\phi$}}
+\newcommand{\bzeta}{ \mbox{\boldmath $\zeta$}}
+\newcommand{\bkap}{ \mbox{\boldmath $\kappa$}}
+\newcommand{\bkappa}{ \mbox{\boldmath $\kappa$}}
+\newcommand{\beps}{ \mbox{\boldmath $\epsilon$}}
+\newcommand{\bepsilon}{ \mbox{\boldmath $\epsilon$}}
+\newcommand{\bthet}{ \mbox{\boldmath $ \theta $} }
+\newcommand{\btheta}{ \mbox{\boldmath $ \theta $} }
+\newcommand{\bnu}{ \mbox{\boldmath $\nu$} }
+\newcommand{\bmu}{ \mbox{\boldmath $\mu$} }
+\newcommand{\bOmega}{ \mbox{\boldmath $\Omega$} }
+\newcommand{\bGam}{ \mbox{\boldmath $\Gamma$} }
+\newcommand{\bSig}{ \mbox{\boldmath $\Sigma$} }
+\newcommand{\bSigma}{ \mbox{\boldmath $\Sigma$} }
+\newcommand{\bPhi}{ \mbox{\boldmath $\Phi$} }
+\newcommand{\bpsi}{ \mbox{\boldmath $\psi$} }
+
+\newcommand{\bThet}{ \mbox{\boldmath $\Theta$} }
+\newcommand{\bTheta}{ \mbox{\boldmath $\Theta$} }
+\newcommand{\bDel}{ \mbox{\boldmath $\Delta$} }
+\newcommand{\bDelta}{ \mbox{\boldmath $\Delta$} }
+\newcommand{\bnabla}{ \mbox{\boldmath $\nabla$} }
+\newcommand{\bLam}{ \mbox{\boldmath $\Lambda$} }
+\newcommand{\bLambda}{ \mbox{\boldmath $\Lambda$} }
+\newcommand{\bLambdasub}{ \scriptsize{\bLambda}}
+\newcommand{\bgam}{ \mbox{\boldmath $\gamma$} }
+\newcommand{\bgamma}{ \mbox{\boldmath $\gamma$} }
+\newcommand{\brho}{ \mbox{\boldmath $\rho$} }
+\newcommand{\bdel}{ \mbox{\boldmath $\delta$} }
+\newcommand{\bdelta}{ \mbox{\boldmath $\delta$} }
+\newcommand{\bvarphi}{ \mbox{\boldmath $\varphi$} }
+\newcommand{\bsigma}{ \mbox{\boldmath $\sigma$} }
+\newcommand{\boeta}{ \mbox{\boldmath $\eta$} }
+
+\newcommand{\betSS}{\scriptsize\bet}
+\newcommand{\bepsilonSS}{\scriptsize\bepsilon}
+
+\newcommand{\bzero}{\textbf{0}}
+\newcommand{\bone}{\textbf{1}}
+
+\newcommand{\bZ}{\textbf{Z}}
+\newcommand{\bz}{\textbf{z}}
+\newcommand{\ba}{\textbf{a}}
+\newcommand{\bA}{\textbf{A}}
+\newcommand{\bb}{\textbf{b}}
+\newcommand{\bB}{\textbf{B}}
+\newcommand{\bc}{\textbf{c}}
+\newcommand{\bC}{\textbf{C}}
+\newcommand{\bd}{\textbf{d}}
+\newcommand{\bD}{\textbf{D}}
+\newcommand{\be}{\textbf{e}}
+\newcommand{\bE}{\textbf{E}}
+\newcommand{\bbf}{\textbf{f}}
+\newcommand{\bF}{\textbf{F}}
+\newcommand{\bk}{\textbf{k}}
+\newcommand{\bK}{\textbf{K}}
+\newcommand{\bh}{\textbf{h}}
+\newcommand{\bH}{\textbf{H}}
+\newcommand{\bi}{\textbf{i}}
+\newcommand{\bI}{\textbf{I}}
+\newcommand{\bg}{\textbf{g}}
+\newcommand{\bG}{\textbf{G}}
+\newcommand{\bJ}{\textbf{J}}
+\newcommand{\bL}{\textbf{L}}
+\newcommand{\bbm}{\textbf{m}}
+\newcommand{\bM}{\textbf{M}}
+\newcommand{\bn}{\textbf{N}}
+\newcommand{\bN}{\textbf{N}}
+\newcommand{\bO}{\textbf{O}}
+\newcommand{\bp}{\textbf{p}}
+\newcommand{\bP}{\textbf{P}}
+\newcommand{\bPr}{\textbf{Pr}}
+\newcommand{\bs}{\textbf{s}}
+\newcommand{\bS}{\textbf{S}}
+\newcommand{\bt}{\textbf{t}}
+\newcommand{\bT}{\textbf{T}}
+\newcommand{\bu}{\textbf{u}}
+\newcommand{\bU}{\textbf{U}}
+\newcommand{\bv}{\textbf{v}}
+\newcommand{\bV}{\textbf{V}}
+\newcommand{\bw}{\textbf{w}}
+\newcommand{\bW}{\textbf{W}}
+\newcommand{\bx}{\textbf{x}}
+\newcommand{\bX}{\textbf{X}}
+\newcommand{\by}{\textbf{y}}
+\newcommand{\bY}{\textbf{Y}}
+\newcommand{\br}{\textbf{r}}
+\newcommand{\bR}{\textbf{R}}
+
+\papertype{Original Article}
+
+\title{Pollution State Modeling for Mexico City}
+
+\author[1\authfn{1}]{Philip A. White}%\thanks{paw27@stat.duke.edu}}
+\author[1]{Alan E. Gelfand PhD}%\thanks{alan@stat.duke.edu}}
+\author[2]{Eliane R. Rodrigues PhD}% \thanks{eliane@math.unam.mx}}
+\author[3]{Guadalupe Tzintzun} %\thanks{guadalupe.tzintzun@inecc.gob.mx}}
+
+\affil[1]{Department of Statistical Science, Duke University, Durham, NC, United States of America}
+\affil[2]{Instituto de Matem\'{a}ticas,
+Universidad Nacional Aut\'{o}noma de M\'{e}xico, Mexico}
+%\affil[3]{Department of Statistical Science, Duke University}
+\affil[3]{Instituto Nacional de Ecolog\'{\i}a y Cambio Clim\'{a}tico,
+Secretar\'{\i}a de Medio Ambiente y Recursos Naturales, Mexico}
+
+\contrib[\authfn{1}]{Corresponding Author}
+\corraddress{Philip White, Department of Statistical Science, Duke University, Durham, NC, 27708, United States of America}
+\corremail{philawhite@gmail.com}
+\runningauthor{White et al.}
+
+\fundinginfo{
+The work of Eliane Rodrigues was partially funded by the project PAPIIT-IN102416 of the Direcci\'{o}n General de Apoyo al Personal Acad\'{e}mico of the Universidad Nacional Aut\'{o}noma de M\'{e}xico, Mexico (DGAPA-UNAM).
+%ERR is grateful to the Departments of Statistical Science of Duke University, where this work started, for support and hospitality.
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Ground-level ozone and particulate matter pollutants are associated with a variety of health issues and increased mortality. For this reason, Mexican environmental agencies regulate pollutant levels. In addition, Mexico City defines pollution emergencies using thresholds that rely on regional maxima for ozone and for particulate matter with diameter less than 10 micrometers ($\text{PM}_{10}$). To predict local pollution emergencies and to assess compliance to Mexican ambient air quality standards, we analyze hourly ozone and $\text{PM}_{10}$ measurements from 24 stations across Mexico City from 2017 using a bivariate spatiotemporal model. With this model, we predict future pollutant levels using current weather conditions and recent pollutant concentrations. Employing hourly pollutant projections, we predict regional maxima needed to estimate the probability of future pollution emergencies. We discuss how predicted compliance to legislated pollution limits varies across regions within Mexico City in 2017. We find that predicted probability of pollution emergencies is limited to a few time periods. In contrast, we show that predicted exceedance of Mexican ambient air quality standards is a common, nearly daily occurrence.
+
+\keywords{Bayesian inference,  environmental exposure, ozone, particulate matter, spatio-temporal modeling}
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+Long-term exposure to air pollution is strongly linked with respiratory and cardiovascular disease.
+% and leads to increased mortality as well as hospital admissions \citep[see, e.g.,][]{brunekreef2002}. %Particulate matter (PM) is defined to be solid particles and liquid droplets in the air. PM comes from direct emissions (primary particles) and chemical reactions between other pollutants (secondary particles).
+Particulate matter (PM), and in particular those with diameter less than 10 $\mu$m ($\text{PM}_{10}$), is known to increase human mortality and morbidity \citep[see, e.g.,][]{brunekreef2002,pope2006,loomis2013,hoek2013}.
+%Because PM generally has a short lifetime, urban and other high emission areas generally have higher concentrations of $\text{PM}_{10}$ than rural areas \citep[see][as an example]{clements2012}.
+%Unlike PM, ground-level ozone ($O_3$) is not emitted directly but is instead formed by chemical reactions between of nitrogen oxides and volatile organic compounds, a reaction that requires heat and sunshine \citep[see, e.g., ][]{sillman1999}. Ozone is often as high in rural areas as it is in urban areas \citep[see, e.g., ][]{angle1989,sillman1999,duenas2004}.
+Ozone is linked to a variety of negative health outcomes, including short-term respiratory events, long-term respiratory disease, increased mortality, and low birth weight \citep[see, e.g.,][]{lippmann1989,salam2005,bell2006,weschler2006}. Because of these adverse outcomes, regulatory agencies institute policies to monitor and limit levels of these pollutants. Urban areas are often monitored more closely to protect larger populations due to higher pollution levels found in urban environments \citep[see, e.g.,][]{heal2014}. The detrimental health effects of air pollution in the Mexico City metropolitan area, our area of interest here, are well-studied \citep[see][]{mage1996,romieu1996,hernandez1997,loomis1999,bravo2002,barraza2008,riojas2014} leading to various pollution regulations in the city.
+
+%In spite of 30 years of regulation, the metropolitan area still suffers with high levels of pollution \citep[see, e.g.,][]{bravo2002,zavala2009,rodriguez2016,davis2017,INECC2017,gouveia2018}.
+
+Recent standards  decrease allowable pollution levels relative to previous thresholds \citep{nom14a,nom14b}.
+%Thresholds are updated every five years based on current research on the effect of pollutants on human health.
+The ozone thresholds were reduced to 95 parts per billion (ppb) or, equivalently, 0.095 parts per million (ppm) for \emph{hourly}
+ozone and 70 ppb for \emph{eight-hour average} ozone \citep{nom14b}. Additionally, the allowable 24-hour average $\text{PM}_{10}$ concentration threshold was lowered to 75 micrograms per cubic meter ($\mu g/m^3$) \citep{nom14a}.
+%These thresholds are not used to reduce pollution levels but are instead established to ensure human health protection and to evaluate air quality.
+
+The United States Environmental Protection Agency (EPA) limits 24-hour average $\text{PM}_{10}$ concentration to not exceed 150 $\mu g/m^3$ and 8-hour average ozone concentration to not exceed 70 ppb. \citep{CAA1990}. The European Union restricts 24-hour average $\text{PM}_{10}$ concentration to not exceed 50 $\mu g/m^3$ and 8-hour average ozone concentration to not exceed 120 ppb \citep{EU2016}. Thus, by comparison, Mexican ambient air quality standards (which we denote as MAAQS) are progressive. However, declaration of pollution emergencies in Mexico City are not related to the Mexican national standards and instead use more permissive thresholds.
+
+Mexico City's thresholds, established by the Atmospheric Environmental Contingency Program in Mexico City, are used to indicate times when pollutant concentrations are high enough to cause significant damage to human health \citep{mc2016}. These goals differ from those specified for Mexico's ambient air quality standards. When emergency phases (or events) are activated, the aim is to control/decrease harmful emission levels.  These thresholds have decreased over time. For instance, the thresholds for declaring the equivalent emergencies 1995-2000 were 1.5-2 times the current limits, depending on the type of emergency declared \citep{mc1996}.
+
+The Mexico City metropolitan area is split into five regions: northeast (NE), northwest (NW), central (CE), southeast (SE), and southwest (SW). Within these five regions, there are 24 monitoring stations that recorded both hourly ozone and $\text{PM}_{10}$ levels during the year 2017. Environmental alerts are declared if either hourly ozone or 24-hour average $\text{PM}_{10}$ levels exceed certain pollutant-specific thresholds which rely on regulatory suggestions that differ from those presented in \citet{nom14a,nom14b}.
+Depending on the levels of the pollutant, either a phase I or a phase II alert is declared. Phase I is declared when hourly ozone exceeds $L_{1}^{O}=$ 0.154 ppm (154 ppb) or 24-hour average $\text{PM}_{10}$ exceeds $L_{1}^{PM}=$ 214 $\mu g/m^{3}$.
+%During a phase I emergency, people are encouraged to limit outdoor time, exercise, smoking, and consumption of gas. Additionally, several transportation protocols are instituted to reduce vehicular emissions.
+Similarly, phase II is declared when hourly ozone exceeds $L_{2}^{O}=$ 0.204 ppm (204 ppb) or 24-hour average $\text{PM}_{10}$ exceeds $L_{2}^{PM}=$ 354 $\mu g/m^{3}$. Phase II institutes stricter protocols than phase I.
+%including restricting circulation of official vehicles and strictly limiting civilian and commercial emissions.
+See \citet{mc2016} for full details regarding Mexico City's pollution emergency phases.
+%Depending on the pollutant's level either a phase I or a phase II alert is declared. Phase I is declared when ozone exceeds $L_{1}^{O}=$0.165 ppm (165 ppb) or $\text{PM}_{10}$ exceeds $L_{1}^{PM}=$ 220 $\mu g/m^{3}$. During a phase I emergency, people are encouraged to reduce time spent outdoor, excercise, smoking, consumption of gas \cite{mc2016}. Additionally, several transportation protocols are instituted to reduce vehicular emissions \cite{mc2016}. Similarly, phase II is declared when ozone exceeds thresholds $L_{2}^{O}=$ 0.220 ppm (220 ppb) or $\text{PM}_{10}$ exceeds $L_{2}^{PM}=$ 320 $\mu g/m^{3}$ (\textbf{I need a citation for this. The most recent legislation that I found on this gave different limits than the thresholds you have given me. Were they changed recently? If so, could I get a citation?}).
+
+Compared to MAAQS, Mexico City's Atmospheric Environmental Contingency Program, thresholds are more tolerant of high pollution levels. The phase I thresholds for ozone are 1.6 times the Mexican legal limits, while the phase I thresholds for $\text{PM}_{10}$ are almost three times the MAAQS. The phase II thresholds are roughly two and five times the MAAQS for ozone and $\text{PM}_{10}$, respectively. Phase alerts can be triggered both for regions and city-wide.  They are driven by maxima over stations within regions, at hourly scale for ozone and 24-hour scale for $\text{PM}_{10}$.  Explicit description is summarized in Table \ref{tab:phase}.
+
+%The protocols for phase I or phase II are the same regardless of the pollutant that triggered the alert. If ozone thresholds are exceeded in any region, i.e., the maximum over any station within the region, then emergency phases are declared city-wide (i.e., in all regions), where the phase is determined by which threshold ($L_{1}^{O}$ or $L_{2}^{O}$) was exceeded.
+%
+%On the other hand, $\text{PM}_{10}$ exceedances could trigger regional or city-wide phase alerts, depending on which stations exceed the allowable limits. More explicitly, if the maximum 24-hour average over stations within the same region exceeds a $\text{PM}_{10}$ threshold, then the environmental alert is declared only in that region. However, if the maxima for two or more regions exceed a given $\text{PM}_{10}$ threshold, then the environmental alert is declared over the entire metropolitan area (i.e. in all five regions). This description is summarized in Table \ref{tab:phase}.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\begin{tabular}{| l | l | l |}
+  \hline
+ Phase & Region-wide Alert & City-wide Alert \\
+  \hline
+ \rule{0pt}{2.5ex}None & $\bullet$ $\text{PM}_{10} < L_{1}^{PM}$ and $O_3 < L_{1}^{O}$ for all regions & $\bullet$ $\text{PM}_{10} < L_{1}^{PM}$ and $O_3 < L_{1}^{O}$ for all regions \\
+   & $\bullet$ No higher-order alerts supersede &  \\
+   \hline
+ \rule{0pt}{2.5ex}I & $\bullet$ $\text{PM}_{10} \geq L_{1}^{PM}$ within the region &  $\bullet$ $ O_3 \geq L_{1}^{O}$ for any region \\
+      & $\bullet$ And no higher-order alerts supersede  & $\bullet$ Or $\text{PM}_{10} \geq L_{1}^{PM}$ for two or more regions \\
+    & & $\bullet$ And no higher-order alerts supersede \\
+    \hline
+ \rule{0pt}{2.5ex}II & $\bullet$ $\text{PM}_{10} \geq L_{2}^{PM}$ within the region &  $\bullet$ $ O_3 \geq L_{2}^{O}$ for any region \\
+     & & $\bullet$ Or $\text{PM}_{20} \geq L_{2}^{PM}$ for two or more regions \\
+   \hline
+\end{tabular}
+\caption{Description of Mexico City emergency phase alerts. Note that ozone thresholds are for hourly ozone, while $\text{PM}_{10}$ limits are for 24-hour running average $\text{PM}_{10}$. }\label{tab:phase}
+\end{table}
+
+Pollution emergency phases are suspended only when pollution levels for every station drop below phase I thresholds (i.e. the conditions for no phase alerts are met).  For practical reasons, evaluation of the emergency phases is carried out three times daily: at 10 AM, 3 PM, and 8 PM \citep{mc2016}. Ultimately, however, phase activation and suspension are dependent on meteorological forecasts in addition to observed pollution levels. Because the additional meteorological criteria are not explicitly outlined, we do not attempt to predict actual phase occurrence but instead quantify the \emph{risk} of a phase occurrence.
+
+The contribution here is to understand and predict how often Mexico City was at risk of a pollution emergency in terms of (1) the Atmospheric Environmental Contingency Program in Mexico City and (2) current Mexican ambient air quality standards. For both, we assess how the risk of dangerous pollution varies over city regions and over time.
+%As described above, for Mexico City's Atmospheric Environmental Contingency Program, alerts are triggered when one or more stations exceeds thresholds.
+%Depending on the pollutant, alerts can be limited to a specific region or declared over the whole metropolitan area.
+%Thus, emergency phases depend entirely upon pollutant maxima within each region. Furthermore, environmental alerts are often summarized over coarser temporal scales, like days, rather than the measurement level (hours) or the three hours of evaluation (10 AM, 3 PM, and 8 PM). So, daily emergency phases depend on pollutant maxima over hours of evaluation and stations within each region.
+With regard to MAAQS, we can do inference at each of three spatial scales: station-level, region-level, or city-level. Again, we may be interested in exceedances occurring on a daily scale rather than hourly. %Therefore, we again need maxima over time (and potentially space depending on the spatial scale selected).
+%the foregoing tasks addressed here, the analyses of emergency contingency plan and Mexican ambient air quality standards, rely on the same pollution level data. Therefore,
+Using model choice over a selection of models, we adopt a single hierarchical bivariate spatiotemporal model for hourly ozone and $\text{PM}_{10}$ levels.
+%Predictions from our model serve two practical purposes: First, our predictions allow us to carry out probabilistic inference about pollution emergency states or national compliance issues. Second, if implemented in practice, our model could warn of potential pollution emergencies or compliance problems, allowing regional and city-wide adjustments and responses to be made earlier.
+From this model, all prediction and inference regarding emergency phases and legislation-based exceedances becomes a post-model fitting exercise, as we demonstrate.
+
+There is a rich literature on modeling $\text{PM}$ at both coarse ($10 \mu m$) and fine ($2.5 \mu m$) scale as well as $O_{3}$. We note some papers relevant to our analysis. \citet{sahu2007} use a hierarchical space-time model to model square-root ozone with the goal of assessing long term trends in ozone in Ohio. \citet{cocchi2007} adopt a hierarchical model for log-$\text{PM}_{10}$ concentrations to characterize the effect of meteorological conditions on the $\text{PM}_{10}$ process and to estimate $\text{PM}_{10}$ at unmonitored locations. \citet{berrocal2010} model square-root ozone using spatially-varying regression coefficients \citep{gelfand2003} with misaligned  data of two types, output from numerical models and data collected from monitoring networks. \citet{huang2018} model log-$\text{PM}_{10}$ and log-nitrogen dioxide ($\text{NO}_2$) jointly with regard to effects on health outcomes in Scotland. Similarly, we adopt a hierarchical space-time model with site-specific regression and auto-regressive coefficients for square-root ozone and log-$\text{PM}_{10}$ concentrations in Mexico City.
+
+In Section \ref{sec:data} we present exploratory data analysis for  the Mexico City pollution dataset. In Section \ref{sec:model}, we discuss modeling decisions, model fitting, inference, and  selection.
+%in the context of both Mexico City's Atmospheric Environmental Contingency Program and MAAQS
+In Section \ref{sec:res} we first present a comprehensive analysis of Mexico City's phase alert system, predicting pollution levels and associated phase levels at 10 AM, 3 PM, and 8 PM to mirror the actual phase activation and suspension procedure. Then, we carry out inference on MAAQS exceedances and compare these results to emergency phase predictions. We provide concluding discussion regarding our results and statistical modeling in Section \ref{sec:conc}.
+
+\section{Mexico City Pollution Dataset}\label{sec:data}
+
+We have hourly ozone and $\text{PM}_{10}$ measurements at $N_s = 24$ stations across Mexico City, Mexico for the year 2017. Measurements are obtained minute by minute at each station and averaged to hours.
+%\textbf{I think we need more information. Is this an average over the previous hour???}
+%Let $Y^{O}_{it}$, $Y^{PM}_{it}$ denote ozone and $\text{PM}_{10}$ levels, respectively, at station $i$ and time $t$ with units of hours. 
+Consequently, we observe measurements over $N_t = 8760$ times at each station, giving $N = 210240$ pairs of ozone and $\text{PM}_{10}$ concentration across the $24$ stations, across the entire year.\footnote{Missing hourly measurements were imputed using the corresponding measurements at the nearest station within the same region. If no stations in that region recorded a measurement at that time, then the nearest station in a different region provided the missing value. This was done prior to our receiving the data for analysis.} Relative humidity (RH) and temperature (TMP) are measured over the same space-time grid as ozone and $\text{PM}_{10}$ and are used as explanatory variables.
+
+As mentioned above, Mexico City is partitioned into five regions which are employed for defining environmental alert phases. Abbreviated station names, corresponding regions, and annual summaries of pollution levels are given in Table \ref{tab:stat}. Station locations are plotted in Figure \ref{fig:station_loc}.
+%using the R package GGMAP \citep{kahle2013}.
+Besides being on the main wind path (from NE to SW) and therefore receiving many ozone precursors from the NE region, the CE region is heavily-trafficked by automobile. The SW region, located at the end of the NE-SW wind corridor, receives ozone produced along this wind path, and this ozone stays trapped in the SW region due to mountains on its southwest boundary.
+ \vspace{-3mm}
+ \begin{table}[H]
+\centering
+\footnotesize
+\begin{tabular}{rclcc}
+  \hline
+   &  &  & Annual & Annual \\
+Region & Stations & Station Names &  Average Ozone & Average $\text{PM}_{10}$ \\
+  \hline
+Northeast & 4 & ACO, SAG, VIF, XAL & 28 ppb & 59 $\mu g / m^3$  \\
+Northwest & 6 & ATI, CAM, CUT, & 27 ppb &49  $\mu g / m^3$  \\
+ &  &  FAC, TLA, TLI &  &  \\
+Central & 4 & BJU, HGM, IZT, MER & 29 ppb  &44 $\mu g / m^3$  \\
+Southeast & 4 &  CHO, MPA,TAH, UIZ  & 36 ppb & 45 $\mu g / m^3$  \\
+Southwest & 6 & AJM, CUA, INN & 34 ppb &33 $\mu g / m^3$  \\
+ &  &  MGH, PED, SFE &  & \\
+   \hline
+\end{tabular}
+\caption{Station names and regions. Average ozone and $\text{PM}_{10}$ across regions are given.}\label{tab:stat}
+\end{table}
+\vspace{-2mm}
+
+The number of stations differs across regions and
+%Consequently, the induced distribution of the regional maximum differs, where regions with more stations are more likely to trigger emergency phases or to exceed Mexico's legislated thresholds if all regions have similar pollution levels, all else being equal.
+pollution levels appear to vary over the regions. The northeast region has the highest average $\text{PM}_{10}$, while the southeast and southwest regions have the highest average ozone.   Hence, the regional maxima, used for phase alerts, are expected to have very different hourly distributions.  Since the maxima are taken over a small number of stations in each region, there is no reason to attempt to consider extreme value theory here.  We model at the station-level rather than at the regional level so that the distributions of the regional maxima are \emph{induced} by the station-level modeling.  In this regard, because ozone and $\text{PM}_{10}$ are strictly non-negative, we consider either models using transformations to $\mathbb{R}^{1}$ or models for strictly positive data.
+
+Region-specific box-plots for ozone and $\text{PM}_{10}$ are shown in Figures \ref{fig:reg_O3_plots} and \ref{fig:reg_pm_plots}. For ozone, the SE region has the highest mean, but the CE and SW regions have the most extreme values. Note that the NE region has the highest average $\text{PM}_{10}$, as well as the most extreme values. This is because the NE region houses a large industrial section that generates many direct pollutants, including particulate matter. We explore dependence 
+by computing station-specific Spearman's $\rho$\footnote{As a rank correlation, Spearman's $\rho$ avoids concern regarding transformations and outlying values.} for all covariate-covariate, covariate-outcome, and outcome-outcome relationships. Since we employ the covariates as lag 1 predictors in our modeling below, we present these correlations with the outcomes. In addition, using a linear model with station-specific intercepts and regression coefficients for RH and TMP, we examine the relationship between residuals of ozone and $\text{PM}_{10}$ to assess the need for a joint model for ozone and $\text{PM}_{10}$. We plot these site-specific correlation coefficients in Figure \ref{fig:correlation_plots}.
+  \vspace{-2mm}
+\begin{figure}[H]
+  \begin{center}
+      \includegraphics[width=.75\textwidth]{stat_loc_bw.pdf}
+  \end{center}
+  \vspace{-12mm}
+       \caption{Station locations with regional labels. %\textbf{It is quite clear that Acolman (ACO) -- see the top right seems to belong better to the NE region, but perhaps I don't understand how these regions are defined.}
+}\label{fig:station_loc}
+\end{figure}
+\vspace{-3mm}
+
+The relationships between ozone and covariates (RH and TMP) are strong for all sites, while the relationships between $\text{PM}_{10}$ and covariates (RH and TMP) vary much more across sites.  However, there appears to be a strong negative correlation between RH and $\text{PM}_{10}$ for all locations while Spearman's $\rho$ varies greatly across sites for TMP and $\text{PM}_{10}$. Similarly, there is variability in the relationships between ozone and $\text{PM}_{10}$ residuals depending on the site, motivating possible use of a joint model for ozone and $\text{PM}_{10}$. The variability of the outcome, covariate, and outcome-covariate relationships across stations motivates a hierarchical model for covariate effects.  However, the dependence between the residuals is weak; thus, joint modeling may not offer much benefit with regard to prediction.  %\textbf{Are you Ok with this last sentence?}
+
+%\textbf{?? Clarify here or above that, we model residual spatial structure and so we look at correlation in the residuals for the $PM_{10}$ by $O_{3}$ plot.}
+We find strong daily and weekly patterns for both pollutants. Using residual analysis for a model with site-specific effects for meteorological covariates, we still observe strong seasonal patterns for both day and week. Additionally, our preliminary analyses reveal strong correlation between the variance of residuals and the mean for both pollutants. This correlation could be addressed through variance stabilizing transformation (VST), e.g., log, square-root, Box-Cox as was done by, for example, \citet{sahu2007,cocchi2007,berrocal2010,huang2018}. Alternatively, we could use heteroscedastic models that specify variance directly as a function of hour or month. We consider both approaches in Section \ref{sec:mod_comp}. The associated exploratory analysis is provided in the online supplement.
+
+%\textbf{It seems there was a lot further EDA material cut from the original submission - the ACF's to suggest lags, the periodicity, etc.  Fine with me but this already shortened the paper by two pages!}
+\vspace{-2mm}
+\begin{figure}[H]
+  \begin{center}
+   \begin{subfigure}[b]{.32\textwidth}
+      \includegraphics[width=\textwidth]{o3_reg_box}
+      \subcaption{Region $\text{O}_{3}$ boxplot}\label{fig:reg_O3_plots}
+   \end{subfigure}
+     \begin{subfigure}[b]{.32\textwidth}
+     \includegraphics[width=\textwidth]{pm10_reg_box}
+           \subcaption{Regional $\text{PM}_{10}$ boxplot}\label{fig:reg_pm_plots}
+   \end{subfigure}
+        \begin{subfigure}[b]{.32\textwidth}
+     \includegraphics[width=\textwidth]{xy_cor}
+           \subcaption{Correlation boxplots}\label{fig:correlation_plots}
+   \end{subfigure}
+  \end{center}
+  \vspace{-4mm}
+       \caption{Region-specific boxplots for (left) ozone and (center) $\text{PM}_{10}$. (right) Site-specific Spearman's $\rho$ for (from left to right) relative humidity and temperature, ozone and lag-temperature, ozone and lag-relative humidity, $\text{PM}_{10}$ and lag-temperature, $\text{PM}_{10}$ and lag relative humidity, and model residuals for $\text{PM}_{10}$ and ozone. }\label{fig:reg_box_plot}
+\end{figure}
+
+%\textbf{Alan: Increase axis label size on most plots}
+%\vspace{-2mm}
+%\begin{figure}[H]
+%  \begin{center}
+%      \includegraphics[width=.5\textwidth]{xy_cor}
+%  \end{center}
+%  \vspace{-4mm}
+%       \caption{Site-specific Spearman's $\rho$ for (Far Left) relative humidity and temperature (Left) ozone and temperature (Left-middle) ozone and relative humidity (Right-middle) $\text{PM}_{10}$ and temperature (Right) $\text{PM}_{10}$ and relative humidity (Far Right) $\text{PM}_{10}$ and ozone.}\label{fig:correlation_plots}
+%\end{figure}
+
+\section{Methods and Models}\label{sec:model}
+
+Given the exploratory analysis, a time-series model specification is warranted. Because the data are collected hourly, because the exposure standards are at the scale of hours (or functions of hours), and because we can identify useful discrete lags which are difficult to capture with covariance specifications, we elect to work with discrete time rather than continuous time.
+%and prediction at a sub-hourly scale is not of interest, we argue that modeling the data in discrete time is natural and preferable.
+%However, we briefly discuss how similar continuous-time models could be posed and fit.
+Additionally, our exploratory analysis suggests that a model using either a VST or time-varying variance may describe the data more accurately than models using non-transformed data or homoscedastic models. As a result, we propose the model for these data to be
+\begin{align}\label{eq:mod3a}
+Y^{O}_{it} &= \bx_{i(t-1)}^T \bbeta_{1i} + {\bL^{O}_{it}}^T\bgamma_{1i}+ \psi_{1i} + \epsilon_{1it} \\
+Y^{PM}_{it} &= \bx_{i(t-1)}^T \bbeta_{2i}+ {\bL^{PM}_{it}}^T\bgamma_{2i} + \psi_{2i} + \epsilon_{2it} , \nonumber
+\end{align}
+where $Y^{O}_{it}$ is ozone concentration (or square-root ozone)
+%\textbf{Reviewers didn't ask but what happens if you predict a negative ozone level?}
+and $Y^{PM}_{it}$ is $\text{PM}_{10}$ concentration (or log-$\text{PM}_{10}$) at site $i$ and hour $t$.
+%The log-scale may be used to match the support of the data, otherwise a likelihood with positive support should be used.
+Here, $\bx_{i(t-1)}$ includes an intercept, temperature, and relative humidity at site $i$ and time $t-1$. We use covariates from the previous hour because one of the primary purposes of this model is one-hour-ahead predictions for pollutants and corresponding phase alerts and exceedance probabilities and $\bx_{it}$ will not be available for such prediction.
+%Is model-based imputation interesting or should we just stick to how they are going to impute missing values?
+
+With $N_{s}$ denoting the number of stations, the parameters in $\bbeta =( \bbeta_{11},...,\bbeta_{1N_s},\bbeta_{21},...,\bbeta_{2N_s})$ are station-specific regression coefficients for both $\text{PM}_{10}$ and ozone. Because we imagine that the effect of humidity on pollutant concentrations is similar from region to region, we model regression coefficients exchangeably and hierarchically, centering effects on respective common means \citep[see][for introductory thoughts on such hierarchical modeling]{gelman2014}. We define ${\bL^{O}_{it}}$ and ${\bL^{PM}_{it}}$ to be generic vectors of the lagged observations for ozone and $\text{PM}_{10}$, respectively with $\bgamma =( \bgamma_{11},...,\bgamma_{1N_s},\bgamma_{21},...,\bgamma_{2N_s})$ as corresponding site-specific autoregressive coefficients. Lags for observations in early January 2017 (${\bL^{O}_{it}}$ and ${\bL^{PM}_{it}}$) may depend upon observations from December 2016\footnote{These are available to us and are treated as fixed in our modeling.}.  The choice of components of ${\bL^{O}_{it}}$ and ${\bL^{PM}_{it}}$ becomes the model choice issue which we take up in Section 3.3. As with $\bbeta$, we model $\bgamma$ hierarchically. Then, we have pure error terms, $\epsilon_{1it} \overset{iid}{\sim} N(0,\sigma^2_1)$ and $\epsilon_{2it} \overset{iid}{\sim} N(0,\sigma^2_2)$, or $\epsilon_{1it} \overset{ind}{\sim} N(0,\sigma^2_{1t})$ and $\epsilon_{2it} \overset{ind}{\sim} N(0,\sigma^2_{2t})$ for the heteroscedastic formulation.
+%More generally, a heteroscedastic model assumes $\epsilon_{1i}(t) \overset{ind}{\sim} N(0,\sigma^2_{1t})$ and $\epsilon_{2i}(t) \overset{ind}{\sim} N(0,\sigma^2_{2t})$.
+
+Finally, to bring in spatial structure across the sites, jointly, $(\psi_{1i},\psi_{2i})$ follow a bivariate conditionally autoregressive (CAR) model using coregionalization of two independent CAR models, $\bV_1 = (V_{11},V_{12},...,V_{1N_s})^T$ and $\bV_2= (V_{21},V_{22},...,V_{2N_s})^T$ \citep[see][]{rue2005,banerjee2014}, each with precision parameter equal to 1.
+%Coregionalization allows flexible, multivariate modeling \citep[see, e.g.,][]{matheron1982,grzebyk1994,wackernagel1994,banerjee2014}.
+Explicitly,
+\begin{align*}
+\begin{pmatrix}
+\psi_{1i} \\ \psi_{2i} \end{pmatrix}  &= \bA_\psi (V_{1i} , V_{2i})^T \\
+\bA_\psi &= \begin{pmatrix}
+a^{(\psi)}_{11} & 0 \\ a^{(\psi)}_{12} & a^{(\psi)}_{22} \end{pmatrix}.
+\end{align*}
+As a result, $\bA_\psi$ is the Cholesky decomposition of $\bA_\psi \bA\psi^{T}$ which plays the role of a site-level covariance matrix.  $a^{(\psi)}_{11}$ and $a^{(\psi)}_{22}$ become positive scale parameters while  $a^{(\psi)}_{12}$, the dependence parameter, can be positive or negative. 
+
+The model in (\ref{eq:mod3a}) includes reduced models of interest.  If $\alpha_{12}^{(\psi)} = 0$, then the spatial random effects are modeled as independent. Further, if $\bV_1 = \bzero$ or $\bV_2 = \bzero$, the model for ozone or for $\text{PM}_{10}$ becomes non-spatial.
+%\textbf{Alan:  Help!  How can the $V$'s have a scale (or variance) parameter and we also have an associated scale parameter in the $A$ matrix?  You can not identify both?  Ahh, I now see that you clarified this below but it would probably be cleaner to remove the $\tau^2$'s and have an unrestricted $A$ matrix.  You certainly do not need expression (3) below.}
+
+Because we are adopting a CAR model for point-referenced locations, we use inverse distance for the proximity matrix which we denote by $\bW$ for $\bV_1$ and $\bV_2$. We assume the same distant-dependent CAR structure for both $\bV_1$ and $\bV_2$, with weights proportional to $\exp(-d/\text{max} d)$ with $d$ denoting the distance between locations and $\text{max} d$ the maximum distance between stations.
+
+%\textbf{Alan: How do we know that $e^{-d}$ provides the appropriate scaling for distances? Why now $e^{-ad}$ for a suitable $a$?}
+%For common proximity matrix $\bW$, if we let $D_W$ be diagonal with ${(D_W)}_{ii} = w_{i+}$, where $w_{i+} =  \sum_i \bW_{ij}$, then, the (unscaled) precision matrix of $\bV_1$ and $\bV_2$ is $Q=D_W-W$.
+%\textbf{We don't need the previous sentences.  ICAR models are familiar and just need a cite.}
+%Given the form of the prior distribution of $(\bpsi_{1} , \bpsi_{2})^T$, it is evident that $\tau^2_2$ and $a_{22}^{(\psi)}$ are not uniquely identifiable because they scale each other and do not appear otherwise in the prior distribution. Therefore, we fix $a_{22}^{(\psi)} = 1$. While it may be intuitive that $a_{11}^{(\psi)}$ would not be identifiable for the same reasons,  $a_{11}^{(\psi)}$  appears in $[\bpsi_1 | \tau^2_1,A_\psi]$ as well as $[\bpsi_2 | \bpsi_1,\tau^2_2,A_\psi]$. Thus, we treat both $a_{11}^{(\psi)}$ and $a_{12}^{(\psi)}$ as unknowns. \textbf{What follows makes no sense.  $Q^{-1}$ does not exist.  The model for $Y$'s is only generative conditional on the $V$'s and then the $Y$ are cond'ly indep.  You have got to strip this stuff out of here!}  For this model, the covariance for two ozone observations where $t \leq t'$ is
+%\begin{align}
+%\text{Cov}(Y^O_{it} , Y^{O}_{i't'}) &= \bone(i = i') \left( \bx_{i(t-1)}^T \Sigma_{\beta_1} \bx_{i'(t'-1)} +  {\bL^O_{it}}^T \Sigma_{\gamma_1} \bL^O_{i't'} \right. \\
+%& \left. + \bone(Y^{O}_{it} \in \bL^O_{i't'})\gamma_{1i'k}  + \bone(t = t') \sigma^2 \right) + a_{11}^{(\psi)} \tau^2 (Q^{-1})_{ii'},\nonumber
+%\end{align}
+%where $\gamma_{1i'k}$ is the autoregressive coefficient for $Y^{O}_{it}$ as a lag of $Y^{O}_{i't'}$, $(Q^{-1})_{ii'}$ is the $i^\text{th}$ row and ${i'}^\text{th}$ of $(Q^{-1})$, and $\Sigma_{\beta_1}$ and $\Sigma_{\gamma_1}$ are covariance matrices for $\bbeta_1$ and $\bgamma_1$, respectively. The covariance for a pair of $\text{PM}_{10}$ observations is similar. For arbitrary ozone and $\text{PM}_{10}$ observations, $\text{Cov}(Y^O_{it} , Y^{PM}_{i't'}) = a_{11}^{(\psi)} a_{12}^{(\psi)} \tau_1^2$, given by the coregionalization model.
+
+\subsection{Priors, Model Fitting, and Prediction}\label{sec:priors}
+
+We model regression and autoregressive coefficients $\bbeta_{1i}$, $\bbeta_{2i}$, $\bgamma_{1i}$, and $\bgamma_{2i}$ hierarchically,
+\begin{equation}
+\begin{aligned}[c]
+\bbeta_{1i} &\sim N(\bbeta_{01} , \Sigma_{\beta_1} ), \\
+\bbeta_{2i} &\sim N(\bbeta_{02} ,\Sigma_{\beta_2} ), \\
+\bbeta_{01} &\sim N(\bzero, 10^3 \, \bI ), \\
+\bbeta_{02} &\sim N(\bzero, 10^3 \, \bI ), \\
+\end{aligned}
+\hspace{10mm}
+\begin{aligned}[c]
+\bgamma_{1i} &\sim N(\bgamma_{01} , \Sigma_{\gamma_1} ), \\
+\bgamma_{2i} &\sim N(\bgamma_{02} ,\Sigma_{\gamma_2} ), \\
+\bgamma_{01} &\sim N(\bzero, 10^3 \, \bI), \\
+\bgamma_{02} &\sim N(\bzero, 10^3 \, \bI), \\
+\end{aligned}
+\hspace{10mm}
+\begin{aligned}[c]
+\Sigma_{\beta_1} &\sim IW(10^3 \, \bI ,p + 1), \\
+\Sigma_{\beta_2} &\sim IW(10^3 \, \bI , p + 1 ), \\
+\Sigma_{\gamma_1} &\sim IW(10^3 \, \bI ,n_{1l} + 1), \\
+\Sigma_{\gamma_2} &\sim IW(10^3 \, \bI , n_{2l} + 1 ), \\
+\end{aligned}
+\end{equation}
+where $IW$ denotes an inverse Wishart distribution,  $p = 3$ is the number of regressors including the intercept, $n_{1l}$ is the number of lags for ozone, and $n_{2l}$ is the number of lags for $\text{PM}_{10}$. By this, we assume that station-specific regression and autoregression coefficients are exchangeable. For the variance terms in the likelihood and the CAR prior, we assume weakly informative prior distributions, where
+\begin{equation}
+\begin{aligned}[c]
+\sigma_1^2 &\sim IG(1,1), \\
+\sigma_2^2 &\sim IG(1,1), \\
+\end{aligned}
+\hspace{20mm}
+\begin{aligned}[c]
+{a^{(\psi)}_{11}}^2 &\sim IG(1,1), \\
+{a^{(\psi)}_{22}}^2  &\sim IG(1,1). \\
+\end{aligned}
+\end{equation}
+Here, $IG$ denotes an inverse Gamma distribution.  Lastly, we assume ${a^{(\psi)}_{12}} \sim N(0,10^3)$. Model fitting details via a Gibbs sampler are given in Appendices \ref{app:gibbs3} and \ref{app:gibbs4}.
+%This model could be fit sequentially, but this would require us to update model parameters 8760 times for each step an MCMC sampler, once for each hour in 2017.
+%\textbf{Again, why introduce symbols just to set them =1?}
+%For this problem, one of the primary modeling questions is which and how many lagged terms we should include.
+%\textbf{This seems a bit silly.  You fit the model in the most efficient way, then you do inference!  I think the possible confusion here is the \textrm{repeated} fitting of the model according to the inference you wish to make.  However, with any set of hourly measurements up to a given time, the model is always fitted the same way.  And, that is what is in Appendices A and B. Also, for clarity, we we work with inference based upon 24-hour averages, I assume that you take 23 hours as observed and only predict the last one in order to create the 24-hour average?}
+
+Prediction can be done both \emph{retrospectively}, filling in missing data over sites and times or \emph{prospectively}, predicting the next hour given the data up to the current hour.
+In the latter case, we only train model parameters on data observed prior to our predictions. In fact, for computational reasons, instead of fully sequential model fitting where the model is updated hourly, we fit the model up to the last hour of the previous month. Then, this model is used to predict for pollutant levels for the upcoming month.  When carrying out inference for all days simultaneously, we fit the model to all of the data. For pollution and phase predictions, we limit our prediction to 10 AM, 3 PM, and 8 PM, each day to match the times of phase activation and suspension. Even though we make one-hour-ahead predictions, our predictions depend on model parameters that are trained using all the data; thus, our phase analysis is, in a sense, retrospective even though predictions are prospective. This model allows us to make probabilistic inference about reaching the conditions for environmental phase alerts.
+% in Mexico City and about Mexico City's compliance with MAAQS.
+%\textbf{I think you might move the discussion of the previous paragraph here to illustrate when you will be retro- and when you will be pro- with regard to inference.  Then you could begin separate paragraphs for how you implement each case.}
+
+%\textbf{I commented out the next paragraph and probably you should remove the associated material in Appendix C.}
+%In the missing data context, we suppose that arbitrary $Y^{O}_{it}$ or $Y^{PM}_{it}$ is unobserved. This could be due to limited sampling or for model validation on a holdout dataset, but we only take this predictive approach when comparing models in Section \ref{sec:mod_comp}. Each held-out observation is updated or imputed as a part of model fitting using a Gibbs sampler (See Appendix \ref{app:full_cond_pred} for details).
+%\textbf{This will confuse the reader since, in Section 2 we say that the data arrived with imputation of some sort already done. So, there is really no missing data unless we do holdout.  }
+
+To predict future pollution measurements using (1), we employ posterior parameter samples in the following one-step ahead predictors:
+\begin{align}\label{eq:mod3a_one}
+Y^{O}_{i(t+1)} &= \bx_{it}^T \bbeta_{1i} + {\bL^O_{i(t+1)}}^T\bgamma_{1i}+ \psi_{1i}  + \epsilon_{1i(t+1)} \\
+Y^{PM}_{i(t+1)} &= \bx_{it}^T \bbeta_{2i}+ {\bL^{PM}_{i(t+1)}}^T\bgamma_{2i} + \psi_{2i}  + \epsilon_{2i(t+1)}.\nonumber
+\end{align}
+%Note that one-step-ahead predictions do not rely on future covariates.
+%We use this type of prediction for both inferential tasks (See Sections \ref{sec:retro_phase} and \ref{sec:prospective}).
+
+In our setting, predicted phase alerts come from the one-hour-ahead ozone predictions (${Y}_{it}^{O*}$) and the predicted 24-hour average $\text{PM}_{10}$ concentration (${\overline{Y}_{it}^{PM*}}$), where ${\overline{Y}_{it}^{PM*}}$ is the average of the 23 most recent observed $\text{PM}_{10}$ concentrations ($Y_{i(t-1)}^{PM},...,Y_{i(t-23)}^{PM}$) and the forecasted $\text{PM}_{10}$ level (${Y}_{it}^{PM*}$). Nationally legislated thresholds depend on 24-hour average $\text{PM}_{10}$ and on 8-hour average $O_3$. Similar to ${\overline{Y}_{it}^{PM*}}$, predicted 8-hour average ozone concentration (${\overline{Y}_{it}^{O*}}$) is an average of a one-hour-ahead prediction and the previous seven ozone measurements ($Y_{i(t-1)}^{O},...,Y_{i(t-7)}^{O}$). For predictions of both ${\overline{Y}_{it}^{PM*}}$ and ${\overline{Y}_{it}^{O*}}$ in the first week of January,  we use observations from late December 2016.
+%\textbf{With lags of 168 hours you would have to go further back into December and also use these observations through January 7th?  Also, your hat notation suggests you are only obtaining posterior means when there should be an entire predictive distribution for each $Y^{O}$ and $Y^{PM}$.}
+
+%When predicting $h$-steps ahead, the lagged terms may be a mixture of observed and predicted terms, and the variance of the error term increases as a function of $h$ because $\epsilon_{ki(t+1)}$ is added for each prediction step. \textbf{Help!  I didn't think we were ever doing $h$-step ahead prediction.  I thought if we wanted to predict $h$ ours ahead at time $t$, we only do one-step ahead prediction for $t+1$, $t=2$, etc. but that we were not refitting the model after time $t$.  That is, we were using the posterior samples for the unknowns at the time when we do the first one-step ahead prediction but we added the data at $t+1$, $t+2$, etc.}  If we take $\hat{Y}^O_{i(t + h-m)} = \bx_{i(t + h-m-1)}^T \bbeta_{1i} + {\hat{\bL}_{i(t + h-m) }^O }{}^T\bgamma_{1i}+ \psi_{1i}$ for $m < h$, then the lagged terms $\hat{\bL}_{k(t+h)}^O$ is composed of data $Y^{O}_{it'}$ when the lagged terms occur before $t$ (i.e. $t' \leq t$) and predictions $\hat{Y}^O_{it'}$ when the lagged terms are not observed ($t' > t$). The $h$-step-ahead forecasting model is
+%\begin{align}\label{eq:mod3a_h}
+%Y^{O}_{i(t + h)} &= \bx_{i(t+h-1)}^T \bbeta_{1i} + {{\hat{\bL}}^O_{i(t+h)}}{}^T \bgamma_{1i}+ \psi_{1i}  + \epsilon_{1i(t+h)} \\
+%Y^{PM}_{i(t + h)} &= \bx_{i(t+h-1)}^T \bbeta_{2i}+ {{\hat{\bL}}^{PM}_{i(t+h)}}{}^T \bgamma_{2i} + \psi_{2i}  + \epsilon_{2i(t+h)},\nonumber
+%\end{align}
+%where $\bx_{i(t+h-1)}$ must be obtained in some way (e.g. through a weather model). Error propagation is given implicitly by inclusion of error in the unobserved lagged terms.
+
+%One option for this, is to compare the predictive performance of models that differ in which lagged terms are included. Alternatively, one could include many lagged terms, say 24 (an entire day), and introduce a shrinkage or sparseness prior distribution on the AR coefficients. For example, we could introduce a LASSO prior distribution on the common means in the hierarchical structure:
+%\begin{equation}
+%\begin{aligned}[c]
+%\bgamma_{1i} &\sim N(\bgamma_{01} , \Sigma_{\gamma_1} ), \\
+%\bgamma_{2i} &\sim N(\bgamma_{02} ,\Sigma_{\gamma_2} ), \\
+%\bgamma_{01} &\sim N(\bm_{\gamma_1}, \bD_1), \\
+%\bgamma_{02} &\sim N(\bm_{\gamma_2}, \bD_2), \\
+%\Sigma_{\gamma_1} &\sim IW(M_{\gamma_1} , \nu_{\gamma_1}), \\
+%\Sigma_{\gamma_2} &\sim IW(M_{\gamma_2}, \nu_{\gamma_2} ),
+%\end{aligned}
+%\end{equation}
+%where the diagonal elements of $D_1$ and $D_2$ are come from an exponential distribution with rate parameters $\lambda^2_1$ and $\lambda^2_2$.
+%Similarly, on could utilize a ridge prior distributions
+%\begin{equation}
+%\begin{aligned}[c]
+%\bgamma_{1i} &\sim N(\bgamma_{01} , \Sigma_{\gamma_1} ), \\
+%\bgamma_{2i} &\sim N(\bgamma_{02} ,\Sigma_{\gamma_2} ), \\
+%\bgamma_{01} &\sim N(\bm_{\gamma_1}, \lambda^2_1 \bI), \\
+%\bgamma_{02} &\sim N(\bm_{\gamma_2},\lambda^2_2 \bI), \\
+%\Sigma_{\gamma_1} &\sim IW(M_{\gamma_1} , \nu_{\gamma_1}), \\
+%\Sigma_{\gamma_2} &\sim IW(M_{\gamma_2}, \nu_{\gamma_2} ).
+%\end{aligned}
+%\end{equation}
+%
+%The coregionalization-like dependence structure could be induced, as was used in Section \ref{sec:gp_mod} to  induce correlation between the temporal patterns of ozone and $\text{PM}_{10}$. Similar effects could be using both lagged ozone and $\text{PM}_{10}$ for each quantity, as in Equation \ref{eq:mod3b},
+%\begin{align}\label{eq:mod3b}
+%Y^{O}_{it} &= \bx_{it}^T \bbeta_{1i} + \bL_{Y_1i}(t)^T\bgamma_{11i} + \bL_{Y_2i}(t)^T\bgamma_{12i}+ \psi_{1i}  + \epsilon_{1it} \\
+%Y^{PM}_{it} &= \bx_{it}^T \bbeta_{2i}+ \bL_{Y_1 i}(t)^T\bgamma_{21i} + \bL_{Y_2 i}(t)^T\bgamma_{22i} + \psi_{2i}  + \epsilon_{2it},\nonumber
+%\end{align}
+%where \textbf{Add description of terms}
+
+\subsection{Posterior Inference}\label{sec:post_analysis}
+
+The primary inferential goal is to assess how often the Mexico City metropolitan area (1) is at risk for declaring phase I or II emergencies and (2) exceeds MAAQS. 
+%For each task, we take different modeling approaches, as discussed in Section \ref{sec:priors}. 
+To analyze the risk of phase I and II emergencies, we fit the model to all the data. In contrast, when examining pollution level exceedances, we fit the model sequentially, as described above. For both tasks, we use one-step-ahead predictions for ozone and $\text{PM}_{10}$ concentrations.
+%\textbf{It seems like you will have already said this in the previous subsection.  Moreover, when will hsave said something about 24-hour averages or do you plan to skip them?  Ahh, this shows up below but, with regard to prediction, you still need to clarify how you are obtaining them.  Moreover, $d$ is one of the $365$ days of the year while 24-hour averages are not connected to days.  Altogether, I think the reader will be confused by all of this.}
+%These posterior predictions allow us to carry out probabilistic inference on emergency phases and MAAQS exceedances to assess how often the Mexico City metropolitan area was at risk of a pollution emergency and how often pollution levels were unsafe according to Mexican federal guidelines \citep{nom14a,nom14b}.
+%Because we forecast, our inference and uncertainty quantification is retrospective and not forward looking. Instead, our goal is to assess how often the Mexico City metropolitan area was at risk of a pollution emergency and how often pollution levels were unsafe according to Mexican federal guidelines \citep{nom14a,nom14b}.
+
+Let $j$ index region and $d$ index day. Additionally, define $\overline{Y}_{it}^{PM}$ to be the 24-hour running average of $\text{PM}_{10}$ at time $t$ and station $i$
+%\textbf{Eliane thought it made more sense to use $\text{d}$ and $\text{j}$ instead of $d$ and $j$. I can update this.}\textbf{Alan: Nope! $j$ and $d$ are not vectors.}
+and define the following maxima:
+\begin{equation}\label{eq:max}
+\begin{aligned}[c]
+Z_{jt}^{O} &= \max_{i \in j} Y_{it}^{O}  \\
+Z_{jt}^{PM} &= \max_{i \in j} \overline{Y}_{it}^{PM}
+\end{aligned}
+\hspace{10mm}
+\begin{aligned}[c]
+W_{jd}^{O} &= \max_{t \in d} \max_{i \in j} Y_{it}^{O} \\
+W_{jd}^{PM} &= \max_{t \in d}\max_{i \in j} \overline{Y}_{it}^{PM}.
+\end{aligned}
+\end{equation}
+The $Z$'s are regional maxima for any hour $t$ and $W$'s are daily regional maxima. Although these maxima rely on data observed prior to time $t$ or day $d$, these quantities are used to define exceedances at time $t$ or day $d$.
+There is limited literature about the distributions and properties of maxima for correlated random variables \citep[see][]{gupta1985,ho1996}. Moreover, these examples are too constrained for our application.
+%In the spatial literature, modeling extreme values, and sometimes maxima, is well-studied \citep[see, e.g.,][]{sang2009,sang2010,davison2012}; however, these approaches generally invoke generalized extreme value (GEV) distribution models. As noted in Section 2, our inference depends on relatively few maxima over few sites or hours, so GEV theory is not applicable.
+Rather, using the definitions in (\ref{eq:max}), we do not model the maxima directly.  Instead, we obtain the derived posterior predictive distributions for $Z_{jt}^{O}$, $Z_{jt}^{PM}$, $W_{jd}^{O}$, and $W_{jd}^{PM}$ from posterior predictive samples of $Y_{it}^{O}$ and $Y_{it}^{PM}$.
+
+The states of Mexico City's phase alert system, $S_{jt} \in \{0,1,2\}$, and are completely determined by $Z_{jt}^{O}$ and $Z_{jt}^{PM}$ (see Section \ref{sec:intro} and Table \ref{tab:phase}). To obtain the maximum phase alert for a day $d$ in region $j$ ($\max_{t \in d} S_{jt}$), we use $W_{jd}^{O}$ and $W_{jd}^{PM}$. We can also infer the distribution of the highest phase alert in any region on day $d$ ($ \max_{j} \max_{t \in d} S_{jt}$). All these derived posteriors are obtained after model fitting. Using derived posterior predictive distributions for various maxima, as well as associated phase states and threshold exceedances, we can compute hourly and daily probabilities of (possible) phase alerts and pollution exceedances regionally and city-wide. These probabilities provide insight regarding how often the Mexico City metropolitan area is at risk of a pollution emergency.
+% even if phase alerts were not enacted due to meteorological forecasts.
+
+Inference for the first task, analysis of the phase emergencies, requires analysis of regional pollution levels at 10 AM, 3 PM, and 8 PM. Specifically, phase states depend on maxima of stations over regions. If we carry out inference on a daily scale, double maxima are needed, maxima over hours and stations within regions. Because phase alerts are based upon one-hour ozone measurements and 24-hour average $\text{PM}_{10}$,
+%\citep{mc2016},
+we predict these averages as described in Section \ref{sec:priors}. These predictions allow us to compute predictions for derived quantities ${Z_{jt}^{O*}}$, $ {Z_{jt}^{PM*}}$, ${W_{jd}^{O*}}$, and $ {W_{jd}^{PM*}}$, which in turn define phase state predictions ${S_{jt}^*}$. 
+%Again, inference on phase predictions is our primary goal.
+
+%\textbf{Add thoughts about the one-step-ahead prediction. How high do we need to observe to trigger a PM10 emergency or to exceed legislation. The same goes for ozone in the context of legislation; however, phase alerts depend on one-hour ozone. }
+%We formalize the description of Table \ref{tab:phase} in Equation \ref{eq:formal_phase}.
+%\begin{equation}\label{eq:formal_phase}
+%S_{jt} =\begin{cases}
+%   0 & \text{if }  \{ Z^{PM}_{jt} < L_1^{PM}  \} \cap \{  Z^{O}_{j't} < L_1^{O} \; \forall \;  j' \} \cap \{ \text{at most one } Z^{PM}_{j't} \geq L_1^{PM} \} \\
+%   1 & \text{if }  \{ Z^{PM}_{jt} \geq L_1^{PM}  \} \cup \{ \text{if } \exists \; j' \; st \; \ Z^{O}_{j't} \geq L_1^{O} \cap  Z^{O}_{j*t} < L_1^{O} \; \forall \;  j* \neq j' \} \cup   \\
+%   & \{ Z^{PM}_{j't} \geq L_1^{PM} \text{ for }  \} \\
+%   2 & \text{if } x < 0 \\
+%  \end{cases}
+%\end{equation}
+
+We also carry out similar inference on MAAQS exceedance for ozone and $\text{PM}_{10}$. Again, we are interested in regional (i.e. stations within a specified region) and city-level (i.e. at any station in the city) exceedance, hourly and daily. Again, inference for pollution exceedances relies upon maxima of one-hour ozone, eight-hour average ozone $\overline{Y}_{it}^{O}$, and 24-hour average $\text{PM}_{10}$. For eight-hour average ozone, we define $\overline{Z}_{jt}^{O}$ to be the regional maxima at time $t$ and $\overline{W}_{jd}^{O}$ to be the daily maxima for region $j$.
+%\textbf{Again, some words are needed as to how this eight-hour average is forecasted.}
+%In this case, thresholds are much lower than the thresholds under the Atmospheric Environmental Contingency Program in Mexico City.
+%\citep{nom14a,nom14b,mc2016}.
+Because nationally legislated ozone and $\text{PM}_{10}$ thresholds were specified to avoid reaching unsafe pollution levels, comparisons to MAAQS indicate how often Mexico City reaches such levels without triggering any city protocols. Such comparisons highlight important differences in how pollution emergencies are defined in Mexico City relative to nationally legislated levels.
+
+\subsection{Model Selection}\label{sec:mod_comp}
+
+Here, we describe the model selection process leading to the model under which we carry out all the inference described in the previous subsections. Our model selection here centers around (1) which and how many lagged predictors are included in the model and (2) which terms of our spatiotemporal model are used, addressing whether ozone and $\text{PM}_{10}$ random effects should be modeled jointly or whether they should be included in the model. In our exploratory analyses, we argued that the variance of ozone and $\text{PM}_{10}$ vary with the time of day and time of year. We indicated that this could be remedied in one of two ways: using variance-stabilizing transformations to address correlation between mean and variance in the data or modeling the heteroscedasticity directly. For transformation approaches, we consider modeling the data on different scales (truncated, log, and square root) to stabilize the mean-variance correlation. To answer these modeling questions, we hold out 10\% of both pollutants and treat these as missing data. Specifically, the locations and times of the hold-out data are selected at random, and both ozone and $\text{PM}_{10}$ are held-out at these location-time pairs so that model comparison can be made using joint predictions. 
+
+We make predictions at these held-out observations and compare competing models based on the following criteria: predictive mean squared error $(E(Y_i|\bY_{obs}) - y_i)^2$ (PMSE) or mean absolute error $|E(Y_i|\bY_{obs}) - y_i|$ (PMAE), $100\times \alpha$ \%  empirical coverage of nominal $90\%$ predictive intervals, and continuous rank probability scores (CRPS) \citep{gneiting2007}, where
+\begin{equation}
+\text{CRPS}(F_i,y_i) = \int^\infty_{-\infty} (F_i(x) -  \bone(x \geq y_i) )^2 dx = \bE|Y_i - y_i | - \frac{1}{2}\bE | Y_i - Y_{i'} | .
+\end{equation}
+With MCMC to fit our model, we use posterior predictive samples for a Monte Carlo approximation of CRPS \citep[see, e.g., ][]{kruger2016},
+\begin{equation}
+\text{CRPS}(\hat{F}^\text{ECDF}_i,y_i) = \frac{1}{M} \sum_{j=1}^M |Y_j - y_i| - \frac{1}{2M^2} \sum_{j=1}^M \sum_{k=1}^M | Y_j - Y_k| ,
+\end{equation}
+where $M$ is the number of MCMC samples used, $Y_i$ are predictions, and $y_i$ are observed values. We then average $\text{CRPS}(\hat{F}^\text{ECDF}_i,y_i)$ over all held-out data. 
+%In addition to being a proper scoring rule \citep{gneiting2007}, because CRPS considers how well the entire predictive distribution matches the observed data rather than only the predictive mean (MAE and MSE) or quantiles (prediction interval coverage), we prefer it as selection criterion. 
+For multivariate predictions, we consider the energy score (ES), which is a multivariate generalization of CRPS. For a set of multivariate predictions $\bY$, ES is defined as
+\begin{equation}
+\text{ES}(P,\by) =  E_P \left\| \bY - \by \right\|^\beta - \frac{1}{2} E_P \left\| \bY - \bY' \right\|^\beta,
+\end{equation}
+where $\by$ is an observation, $\beta \in (0,2)$, and $P$ is a probability measure \citep{gneiting2007}. It is common to fix $\beta = 1$ \citep[see, e.g.,][]{gneiting2008,jordan2017}. For a set of $M$ MCMC predictions $ \bY = \bY_1,...,\bY_M$ for a held-out observation $\by$, the Monte Carlo integration for ES becomes
+\begin{equation}\label{eq:es}
+\text{ES}(\bY,\by) = \frac{1}{M} \sum^M_{j=1} \left\| \bY_j - \by \right\|  - \frac{1}{2M^2} \sum^M_{i=1} \sum^M_{j=1} \left\| \bY_i - \bY_j \right\|.
+\end{equation}
+%as was discussed in \citet{gneiting2008}.
+%\textbf{It seems that (9) is an approximation to -(8).  I think you should flip the sign of (8) to line up with (9) and (6) and (7). You want to maximize (8) but minimize -(8).}
+Energy scores are scale-sensitive, meaning that if one of the variables has a much larger scale than other of the variables, it dominates the norms in (\ref{eq:es}). In our data, $\text{PM}_{10}$ concentration in $\mu g/m^3$ takes values larger than ozone in ppb. To assure that predictions for each pollutant are similarly weighted, we standardize the predictions and hold-out values for each pollutant (i.e. subtract the sample mean and divide by the sample standard deviation). Like CRPS, we average ES over all held-out data.
+
+The heteroscedastic models with variance that varies over hour of the day and month of the year performed uniformly worse than homoscedastic counterparts that used VST's (results not shown). Examining various combinations of square-root transformations, log transformations, and truncated distributions, we found that models using the square-root transformation for ozone and the log transformation for $\text{PM}_{10}$ gave the best predictive performance. Turning to which and how many lagged predictors are included in the model, in Table 1 of the online supplement, we provide the results for six full models which use the square-root transformation for ozone and the log-transformation for $\text{PM}_{10}$ but differ in terms of which lags are included.  The table supports the choice of lags 1, 2, 24, and 168. Therefore, we turn to comparison of full and reduced models (with regard to (\ref{eq:mod3a}) in Table 2 in the online supplement. The table reveals essentially no differences among the models, particularly allowing for Monte Carlo error in the values for the criteria. However, since the dependence spatial model is always preferred to the independence spatial model and since the dependence coefficient, $a_{12}^{(\phi)}$ is significantly positive, we present results for the former below.
+
+%\textbf{ADD COMMENTS. Given the lags that we've chosen, it barely seems to matter what we choose. Please feel free to argue what you think is best. I'll make the table above prettier. The simplest model is the non-spatial one. What's the argument for the spatial model? }
+
+%\textbf{From Alan: You never mention anything about scaling the decay in the proximity entries. However, since the differences are inconsequential, I would remove these model results and just keep ``none'' which I changed to ``full model''.  So, there will be five lines.  The caption needs to be fixed.  As for words, I modified the end of the paragraph above to refer to the choice of lags (which you hadn't mentioned) from the Supplement and the results  of Table 3.  However, you could argue that we either move Table 1 from the Supplement to the text or move Table 3 from the text to the Supplement in order to be balanced. I probably prefer the latter since it shortens the paper.}
+
+%\textbf{Seems you need to say something about how you ``start'' these models with a 168 hour lag.  Do you begin in the second week of January?}
+
+%\end{sidewaystable}
+%\subsection{Modeling Approaches For Continuous Time}\label{sec:gp}
+%
+%In this section, we present modeling details when the data is considered continuous. This may be the case if prediction at arbitrary times is interesting. Then, we envision a model as
+%\begin{align}\label{eq:mod1a}
+%Y^{O}_{it} &= \bx_{it}^T \bbeta_{1i} + \psi_{1i} + \eta_{1i}(t) + \epsilon_{1i}(t) \\
+%Y^{PM}_{it} &= \bx_{it}^T \bbeta_{2i} + \psi_{2i} + \eta_{2i}(t + \epsilon_{2i}(t)), \nonumber
+%\end{align}
+%where $\epsilon_{1i}(t) \overset{iid}{\sim} N(0,\sigma^2_1)$ $\epsilon_{2i}(t) \overset{iid}{\sim} N(0,\sigma^2_2)$.
+%
+%Similar to $\bpsi$, each ($\eta_{1i}(t),\eta_{2i}(t)$) pair follow a bivariate GP model using coregionalization of two independent GP models ($W_{1i}(t),W_{2i}(t)$). Each GP shares a common coregionalization matrix $\bA_\eta$. So,
+%\begin{align*}
+%\begin{pmatrix}
+%\eta_{1i}(t) \\ \eta_{2i}(t) \end{pmatrix}  &= \bA_\eta (W_{1i}(t) , W_{2i})^T \\
+%\bA_\eta &= \begin{pmatrix}
+%a^{(\eta)}_{11} & 0 \\ a^{(\eta)}_{12} & a^{(\eta)}_{22}. \end{pmatrix}
+%\end{align*}
+%For $k = 1,2$ and $i = 1,...,24$, we assume that
+%\begin{equation}
+%W_{ki} \sim GP(0,C_{ki}),
+%\end{equation}
+%with
+%\begin{equation}
+%C_{ki}(t,t') = \lambda^2_{ki} e^{-\phi_{ki}|t - t' | }.
+%\end{equation}
+%\textbf{Add a covariance discussion}
+%By assuming the exponential covariance function for $W_{ki}$, the joint prior distribution for ($\bW_{1i},\bW_{2i}$) is simply the product of prior distributions discussed in Theorem \ref{thm:expcov}. There are massive computational benefits due to the conditional independence given by the exponential covariance model.
+%\begin{theorem}\label{thm:expcov}
+%Suppose that we specify $w(t) \sim GP(0, C),$ where $C$ is the exponential covariance function $\sigma^2 e^{-\phi|t - t'|}$. Let $\bT$ be a sequence of points $t_1 < t_2 < \cdots < t_n$, where $t_i \in \mathbb{R}$, and denote $\bw = (w(t_1),...,w(t_n))^T$. Then,
+%\begin{align}
+%f(\bw) &= N(\bw ; 0 ,\bC_{n \times n}) \\
+%&= N\left[ w(t_1); 0,\sigma^2 \right] \prod_{i=2}^n N \left[ w(t_i); e^{-\phi\Delta t_i } w(t_{i-1} ), \sigma^2 \left( 1 - e^{-2\phi\Delta t_i } \right)\right],
+%\end{align}
+%where $\Delta t_i = t_i - t_{i-1}$.
+%\end{theorem}
+%The proof is provided in Appendix \ref{app:proof1}.
+%More generally, the Mat\'ern covariance function with $\nu =  p - 1/2$ corresponds to a continuous-time autoregressive ($CTAR$) model with lag $p$ for $p \in \mathbb{N}$  \citep[see, e.g.,][]{rasmussen2006} ($CTAR(p)$ are more frequently denoted at $CAR(p)$; however, we utilize $CTAR(p)$ to avoid confusion with conditionally autoregressive models). Additionally, $CTAR(p)$ models correspond to continuous autoregressive moving average$(p,p-1)$ ($CARMA$) for integer $p$  \citep[see, e.g.,][]{brockwell2001}. Thus, the exponential covariance function corresponds to a $CTAR(1)$ or a $CARMA(1,0)$ process. Theorem \ref{thm:expcov} is a consequence of the exponential covariance function yielding a $CARMA(1,0)$ process. Other examples of the Mat\'ern covariance function with $\nu =  p - 1/2$ do not yield sparse precision matrices like the exponential covariance function.
+%For $\eta_{1i} = (\eta_{1i}(1),...,\eta_{1i}(N_T) )^T$ and $\eta_{2i}$ defined analogously, the joint prior distribution of
+%$\eta_{1i}$ and $\eta_{2i}$ is
+%{\footnotesize
+%\begin{align}
+%&[\eta_{1i},\eta_{2i} | \lambda^2_{1i},\lambda^2_{2i},A_\eta] =  [\eta_{1i} | \lambda^2_{1i},A_\psi][\eta_{2i}|\eta_{1i},\lambda^2_{2i},A_\psi] \nonumber \\
+%&=\exp\left\lbrace -\frac{1}{2\lambda^2_{1i} {a_{11}^{(\eta)}}^2 } \eta_{1i} (t_1)^2  \right\rbrace \prod_{j=1}^n \exp\left\lbrace -\frac{1}{2\lambda^2_{1i} {a_{11}^{(\eta)}}^2 \left(1 - e^{-2 \phi_{1i}  \Delta_{t_j} } \right)} \left( \eta_{1i}(t_j) - e^{- \phi_{1i} \Delta_{t_j}} \eta_{1i}(t_{j-1}) \right)^2  \right\rbrace  \times \\
+%& \exp\left\lbrace -\frac{1}{2\lambda^2_{2i} {a_{22}^{(\eta)}}^2 } \left( \eta_{2i}(t_1) - \frac{a_{12}^{(\eta)} }{a_{11}^{(\eta)}} \eta_{1i}(t_1)  \right)^2  \right\rbrace \prod^n_{j=1} \exp\bigg\lbrace -\frac{1}{2 \lambda^2_{2i} {a_{22}^{(\eta)} }^2 \left(1 - e^{-2 \phi_{2i}  \Delta_{t_j} } \right) }  \times \nonumber \\
+%&\left[ \eta_{2i}(t_j) -\frac{a_{12}^{(\eta)} }{a_{11}^{(\eta)}} \eta_{1i}(t_j)   -  e^{-\phi_{2i} \Delta_{t_j}} \left( \eta_{2i}(t_{j-1}) - \frac{a_{12}^{(\eta)} }{a_{11}^{(\eta)}} \eta_{1i}(t_{j-1})  \right) \right]^2 \bigg\rbrace. \nonumber \\
+%&=simplify, \nonumber
+%\end{align}
+%}
+%where \textbf{add mean terms}.
+%Although the coregionalized GP prior is more complicated that independent GP's, the coregionalized GP preserves computational simplicity and scalability. Like the coregionalized CAR prior distribution, $a_{22}^{(\eta)}$ only appears as a scaling factor with $\lambda^2_{2i}$ and consequently these two parameters are not uniquely identifiable. Using the coregionalization model, the model can also be written as
+%\begin{align}\label{eq:mod1b}
+%Y^{O}_{it} &= \bx_{it}^T \bbeta_{1i} + a_{11}^{(\psi)} V_{1i} + a_{11}^{(\eta)} W_{1i}(t) + \epsilon_{1i}(t) \\
+%Y^{PM}_{it} &= \bx_{it}^T \bbeta_{2i} + a_{12}^{(\psi)} V_{1i} + a_{22}^{(\psi)} V_{2i}   + a_{12}^{(\eta)} W_{1i}(t) + a_{22}^{(\eta)} W_{2i}(t) + \epsilon_{2i}(t). \nonumber
+%\end{align}
+%A Gibbs sampler can be derived using the equivalent forms in Equations \ref{eq:mod1a} and \ref{eq:mod1b}.
+
+%To capture seasonality, one could alternatively pose a seasonal covariance model for $W_{1i}(t)$ and $W_{2i}(t)$. Alternatively, one could use a nonseparable space-time covariance model such as those in \citet{gneiting2002} or \citet{porcu2016}. To make these modeling approaches computationally feasible, a nearest-neighbor Gaussian process (NNGP) model could be used instead of a full GP specification \citep{datta2016a,datta2016b,datta2016c}.
+
+%\subsubsection{Priors, Model Fitting, and Prediction}\label{sec:gp_mod}
+%
+%As discussed, we model regression coefficients $\bbeta_{1i}$ and $\bbeta_{2i}$ hierarchically. Specifically, we assume
+%\begin{equation}
+%\begin{aligned}[c]
+%\bbeta_{1i} &\sim N(\bbeta_{01} , \Sigma_{\beta_1} ), \\
+%\bbeta_{2i} &\sim N(\bbeta_{02} ,\Sigma_{\beta_2} ), \\
+%\bbeta_{01} &\sim N(\bm_{\beta_1}, \bS_{\beta_1}), \\
+%\end{aligned}
+%\hspace{20mm}
+%\begin{aligned}[c]
+%\bbeta_{02} &\sim N(\bm_{\beta_2}, \bS_{\beta_2}), \\
+%\Sigma_{\beta_1} &\sim IW(M_1 , \nu_1), \\
+%\Sigma_{\beta_2} &\sim IW(M_2, \nu_2 ), \\
+%\end{aligned}
+%\end{equation}
+%where the \textbf{Fill in the blanks}.
+%Similarly, we assume $\lambda_{ki} \sim IG(a_{\lambda_{ki}} ,b_{\lambda_{ki}})$.
+%Off-diagonal terms of $A_\psi$ and $A_\eta$ are assumed to be \emph{a prior} normal with mean 0. The diagonal terms are assumed to be folded-normal distributions; however, associated full conditionals do not follow well known distributions. Similarly, conjugate updates for the GP covariance rate parameters $\phi_{ki}$ are not available, but these parameters are often assumed to be gamma or uniformly distributed \emph{a priori}. Model fitting depends on how the model is represented (see Equations \ref{eq:mod1a} and \ref{eq:mod1b}). Full conditional distributions using Equation \ref{eq:mod1b} model are given in Appendix \ref{app:gibbs1}.
+
+\section{Results and Discussion}\label{sec:res}
+
+We present our inference based on a joint model for ozone and $\text{PM}_{10}$ with four lags (1, 2, 24, and 168). We use a Gibbs sampler to obtain 100,000 posterior samples after a burn-in of 10,000 iterations. Posterior parameter inference is discussed in detail in the online supplement; however, the results validate many of the modeling decisions suggested by our exploratory analysis in Section \ref{sec:data} and discussed in Section \ref{sec:model}. Specifically, we infer that relative humidity negatively related to both ozone and $\text{PM}_{10}$. Temperature, on the other hand, is positively associated with ozone and negatively associated with $\text{PM}_{10}$. The parameter $a_{12}^{(\psi)}$ is also significantly positive, indicating a positive correlation between the random effects for ozone and $\text{PM}_{10}$.
+
+Turning to prediction, the predictive space is large ($2 \times N \approx 4 \times 10^5$) because we have $N = 210240$ observations. Thus, we thin the posterior predictive samples using every 10$^\text{th}$ sample. By thinning, we make 10,000 roughly independent predictions. These predictions are used to carry out the analyses in Sections \ref{sec:retro_phase} and \ref{sec:prospective}.
+
+\subsection{Analysis of the Phase Alert System}\label{sec:retro_phase}
+
+Following Section 1, to identify when the Mexico City metropolitan area was predicted to be at risk for pollution emergencies we use one-hour-ahead predictions for pollution levels each day at: 10 AM, 3 PM, and 8 PM. Thus, our analysis predicts altogether for 1095 hours in 2017. 
+%This allows us to assess probabilities of the risk of phase alerts given the most recent weather conditions and pollution levels.
+%Again, we note that the risk of a phase alert is not the same as a phase alert.
+As discussed above, we use parameter values trained on the entire dataset which enables effective prediction in early months. Because the pollutant thresholds for triggering phase alerts are very high, most of the year has very low probabilities for phase activation. However, in May of 2017 Mexico City was featured prominently in the news for having dangerously high ozone levels which led to an activation of a phase I pollution emergency. Phase probabilities aggregated over regions ($P(\max_j S_{jd} =k)$ for state $k$) are displayed in Figure \ref{fig:phase_all}. Regional phase I probabilities for each day ($P(S_{jd} = k)$ for phase $k$) are given in Figure \ref{fig:phase_region}. In Figure \ref{fig:phase_region}, we do not show phase II probabilities because they are so low. Additionally, we only display region NE compared to other regions because all other regions overlap (See Figure \ref{fig:phase_region}). Both plots (Figures \ref{fig:phase_all} and \ref{fig:phase_region}) show high probabilities ($>1/2$) of phase I activation from May 16th to May 25, coinciding with the time of the actually declared phase I emergency. Because this phase I alert was triggered by ozone levels, the emergency was declared city-wide, as indicated by the agreement of regional curves in Figure \ref{fig:phase_region}.
+
+On April 6th, predicted ozone levels were sufficiently high to trigger a phase I emergency city-wide, although a phase alert was not declared. On only two occasions, one in January and one in December, was any region at risk of activating the emergency contingency plan due to $\text{PM}_{10}$ levels. These high phase I probabilities were limited to the northeast region (See the red peaks in Figure \ref{fig:phase_region}). Again, a phase I alert triggered by $\text{PM}_{10}$ corresponds to $\text{PM}_{10}$ levels that are nearly three times the levels specified as safe by Mexican legislation.
+%\textbf{Why do I see only 2 colors (NE and SW) in this fig? And, why do we need a horizontal line at .5? Perhaps, separate panels for each region would look better?}
+
+
+In Table \ref{tab:phase_region}, we provide posterior means and 95\% credible intervals for the number of hours and days for which the Mexico City metropolitan area is at risk for pollution emergencies ($\sum_d \bone(S_{jd} = k) $ for phase $k$). There are very few hours and days when the metropolitan area or its sub-regions are at risk of pollution emergencies. That is, the posterior predictive mean for risk of a pollution emergency are, respectively, 11 days and 11 hours for the central, northwest, southeast, and southwest regions. These counts are not necessarily reflective of conditions in the central and northwest regions. Instead, these counts are indicative of predicted city-wide phase I alerts due to predicted ozone exceedances in the southeast and southwest regions, one in April and 10 in May (see Figures \ref{fig:phase_all} and \ref{fig:phase_region}). The northeast region is the only region that had more average predicted hours and days of pollution emergency than the other regions. We predict six hours of risk for phase I emergencies in the northeast region due to $\text{PM}_{10}$ levels over two non-consecutive days, one day in January and one in December. Because the northeast region was the only region where a predicted phase alert was triggered by $\text{PM}_{10}$, the predicted risk of a phase alert was limited to the northeast region. No phase alert was declared even though predicted phase probabilities were equal to one. Thus, the reason for not declaring an emergency must be attributed to meteorological conditions.
+
+\vspace{-6mm}
+
+\begin{figure}[H]
+  \begin{center}
+    \hspace{.1\textwidth}
+  \includegraphics[width=.6\textwidth]{phase_legend2}
+
+  \vspace{-6mm}
+      \includegraphics[width=\textwidth]{phase_prob_all_day}
+  \end{center}
+  \vspace{-8mm}
+       \caption{Phase probabilities in Mexico City, aggregated over all regions.}\label{fig:phase_all}
+\end{figure}
+
+\vspace{-10mm}
+
+\begin{figure}[H]
+  \begin{center}
+    \hspace{.1\textwidth}
+  \includegraphics[width=.6\textwidth]{phase_reg_legend2}
+
+
+
+  \vspace{-6mm}
+
+      \includegraphics[width=\textwidth]{phase_prob_all_day_reg}
+  \end{center}
+  \vspace{-8mm}
+       \caption{Daily phase I probabilities for Mexico City over the year by region. Phase II probabilities are not included because they are uniformly low.}\label{fig:phase_region}
+\end{figure}
+\vspace{-3mm}
+%While we do know the exact rationale for not declaring a phase emergency, we speculate that the emergency was not declared because these predicted phase risks were transient, lasting only one day each.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|l|rrrrrr|}
+\hline
+ &\multicolumn{6}{c|}{ \textbf{Hours (total of 1095 || 3 hours / day) }} \\
+ & CE & NE & NW & SE & SW & Any  \\
+  \hline
+%No Phase & $1084 \pm 4$ & $1078 \pm  4$  & $1084 \pm  4$  & $1084 \pm  4$  & $1084 \pm  4$  & $1078 \pm 4$  \\
+%Phase I & $11 \pm 4$ & $17 \pm 4$ & $11 \pm 4$ & $11 \pm 4$ & $11 \pm 4$ & $17 \pm 4$  \\
+%Phase II & 0.09 (0,1)& 0.09 (0,1)& 0.09 (0,1)& 0.09 (0,1) & 0.09 (0,1)& 0.09 (0,1)\\
+No Phase & $1084 \pm 4$ & $1078 \pm  4$  & $1084 \pm  4$  & $1084 \pm  4$  & $1084 \pm  4$  & $1078 \pm 4$  \\
+Phase I & $11 \pm 4$ & $17 \pm 4$ & $11 \pm 4$ & $11 \pm 4$ & $11 \pm 4$ & $17 \pm 4$  \\
+Phase II & 0.09 (0,1)& 0.09 (0,1)& 0.09 (0,1)& 0.09 (0,1) & 0.09 (0,1)& 0.09 (0,1)\\
+   \hline
+ &\multicolumn{6}{c|}{\textbf{Days (total of 365)} } \\
+No Phase & $354 \pm 4$ & $352 \pm  4$  & $354 \pm  4$  & $354 \pm  4$  & $354 \pm  4$  & $352 \pm 4$  \\
+Phase I & $11 \pm 4$ & $13 \pm 4$ & $11 \pm 4$ & $11 \pm 4$ & $11 \pm 4$ & $13 \pm 4$  \\
+Phase II & 0.09 (0,1)& 0.09 (0,1)& 0.09 (0,1)& 0.09 (0,1) & 0.09 (0,1)& 0.09 (0,1)\\
+   \hline
+\end{tabular}
+\caption{One-hour-ahead posterior predictive estimates for the (Top) Number of hours in each phase state for each region (Bottom) Number of days for which that phase state was attained (the maxima attained each day). Posterior means and 95\% credible intervals are given for each region, using $\pm$ or parentheses. The ``Any'' label indicates that this is the maximum across regions. }\label{tab:phase_region}
+\end{table}
+
+\subsection{Comparison of Mexico City to Mexican Legislated Thresholds}\label{sec:prospective}
+
+Next, we examine the probability that maxima within regions exceed MAAQS on a given day ($W_{jd}^O$ and $W_{jd}^{PM}$ from Section \ref{sec:post_analysis}). In contrast to phase alert probabilities, which are generally very low, exceedance probabilities are often high throughout much of the year. Because MAAQS are more reflective of healthy levels of ozone and $\text{PM}_{10}$, comparison between the exceedance probabilities and emergency phase probabilities highlights how often Mexico City has harmful pollution levels without triggering phase alerts. Additionally, this analysis gives insight into the probability of triggering phase alerts in Mexico City if MAAQS were adopted for Mexico City's Atmospheric Environmental Contingency Program. For our purposes, we group either type of ozone exceedance, one or eight-hour, together. In the online supplement, we focus on three months, April, August, and December, to illustrate how exceedance probabilities change over the course of the year.
+
+We continue the prospective analysis for all months except January, fitting the model up until the last hour of the previous month to predict pollution exceedance for the month of interest\footnote{We note that prospective predictions for January will be poor because the model has not been trained on data for these times.}.
+%\textbf{I don't know what ``informative'' means here?  And, according to our prediction strategy, I would start with February, using  model fitting results, from data up to the last hour of January}
+Using these predictions, we give posterior means and 95\% credible intervals for the one-hour-ahead predicted proportion of hours and days of exceedance for each region (i.e. $P(Z_{jt}^O > 95 \text{ ppb} \,\cup \, \overline{Z}_{jt}^{O} > 70 \text{ ppb} )$, $P(Z_{jt}^{PM} >  75 \text{ } \mu g/m^3)$, $ P(W_{jd}^{O}  > 95 \text{ ppb}  \cup \overline{W}_{jd}^{O} > 70 \text{ ppb} )$, and $P(W_{jd}^{PM} >  75 \text{ } \mu g/m^3)$, as defined in Section \ref{sec:post_analysis}). The results for ozone are given in Table \ref{tab:ozone_region}, for $\text{PM}_{10}$ in Table \ref{tab:pm10_region}. For ozone, the proportion of exceedances in both hours and days decreases as latitude increases, with northern regions showing nearly half as many exceedances as the southern regions, on average. The trend for $\text{PM}_{10}$ is less clear, although there is significant variability across regions. The northeast region has many more predicted $\text{PM}_{10}$ exceedances than any other region. This is due to the large industrial economy located within this region. By contrast, the southwest region has very few $\text{PM}_{10}$ exceedances.
+
+%\textbf{Do you think proportions of total rather than hours would look better of in Tables 6 and 7?}
+
+\vspace{-3mm}
+\begin{table}[H]
+\centering
+\footnotesize
+\begin{tabular}{l|rrrrrr|rrrrrr}
+\hline
+Ozone &\multicolumn{6}{c|}{Hours (total of 8016) } & \multicolumn{6}{|c}{Days (total of 334)}\\
+ & CE & NE & NW & SE & SW & Any & CE & NE & NW & SE & SW & Any \\
+  \hline
+% & 1175 & 532 & 745 & 1552 & 1492 & 2022 & 217 & 123 & 167 & 224 & 232 & 265 \\
+%  2.5\% & 1149 & 511 & 721 & 1526 & 1466 & 1997 & 209 & 113 & 156 & 216 & 225 & 258 \\
+%  97.5\% & 1202 & 553 & 770 & 1579 & 1518 & 2048 & 226 & 132 & 177 & 233 & 240 & 272 \\
+Mean & 0.147 & 0.066 & 0.093 & 0.194 & 0.186 & 0.252 & 0.651 & 0.367 & 0.499 & 0.671 & 0.696 & 0.794 \\
+  2.5\% & 0.143 & 0.064 & 0.090 & 0.190 & 0.183 & 0.249 & 0.626 & 0.338 & 0.467 & 0.647 & 0.674 & 0.773 \\
+  97.5\% & 0.150 & 0.069 & 0.096 & 0.197 & 0.189 & 0.256 & 0.677 & 0.395 & 0.530 & 0.698 & 0.719 & 0.814 \\
+   \hline
+\end{tabular}
+\caption{One-hour-ahead posterior predictive estimates for the (Left) Proportion of hours where either of the Mexican legislated ozone limits (one-hour or eight-hour) were exceeded (Right) Proportion of days where either of the Mexican legislated ozone limits were exceeded. Posterior means and 95\% credible intervals are given for each region. The ``Any'' label indicates that at least one region has an exceedance for one or more location for the time level (hour or day). }\label{tab:ozone_region}
+\end{table}
+\vspace{-3mm}
+\begin{table}[H]
+\centering
+\footnotesize
+\begin{tabular}{l|rrrrrr|rrrrrr}
+\hline
+$\text{PM}_{10}$ &\multicolumn{6}{c|}{Hours (total of 8016) } & \multicolumn{6}{|c}{Days (total of 334)}\\
+ & CE & NE & NW & SE & SW & Any & CE & NE & NW & SE & SW & Any \\
+  \hline
+% & 987 & 3271 & 1771 & 1980 & 90 & 3436 & 73 & 174 & 111 & 123 & 9 & 179 \\
+%  2.5\% & 974 & 3257 & 1757 & 1965 & 85 & 3422 & 70 & 171 & 108 & 121 & 7 & 175 \\
+%  97.5\% & 1001 & 3284 & 1786 & 1995 & 95 & 3450 & 76 & 178 & 114 & 126 & 10 & 182 \\
+ Mean & 0.123 & 0.408 & 0.221 & 0.247 & 0.0112 & 0.429 & 0.218 & 0.5223 & 0.333 & 0.370 & 0.026 & 0.535 \\
+  2.5\% & 0.122 & 0.406 & 0.219 & 0.245 & 0.0106 & 0.427 & 0.210 & 0.512 & 0.323 & 0.362 & 0.021 & 0.524 \\
+  97.5\% & 0.125 & 0.410 & 0.223 & 0.249 & 0.0119 & 0.430 & 0.228 & 0.533 & 0.341 & 0.377 & 0.030 & 0.545 \\
+   \hline
+\end{tabular}
+\caption{One-hour-ahead posterior predictive estimates for the (Left) Proportion of hours where the Mexican legislated 24-hour $\text{PM}_{10}$ limits were exceeded (Right) Proportion of days where either of the Mexican legislated $\text{PM}_{10}$ limits were exceeded. The ``Any'' label indicates that at least one region has an exceedance for one or more location for the time level (hour or day). }\label{tab:pm10_region}
+\end{table}
+\vspace{-3mm}
+
+
+Lastly, we consider the proportion of predicted hourly exceedances as a function of the month of the year and of the hour of the day. The summaries for ozone by month and hour-of-day are plotted in Figure \ref{fig:legislated}, while we display $\text{PM}_{10}$ exceedances only by month (Figure \ref{fig:legislated_pm}). We do not plot $\text{PM}_{10}$ exceedances as function of the hour of the day because $\text{PM}_{10}$ exceedances depend on 24-hour averages. As a function of month, the patterns of ozone and $\text{PM}_{10}$ exceedances are clear. For ozone, the proportion of exceedances reaches a peak in May and is high in March, April, and June. We attribute these high ozone levels to warm times of the year that are dry compared to the rainy season (June-August).  $\text{PM}_{10}$ exceedance appears to co-vary strongly with the rainy season as well, which is captured by relative humidity in our model. In particular, June, July, August, and September have almost no exceedances for $\text{PM}_{10}$. The coldest months (December and February) have higher probabilities of $\text{PM}_{10}$ exceedance than warmer months that are similarly dry. Mexico City's pollution output is higher during winter festivities like Our Lady of Guadalupe, Christmas, and New Year due to fireworks and increased motor traffic. In conjunction with increased pollution output, pollution exceedances in cold months are also due to thermal inversion that traps pollution in the Valley of Mexico where Mexico City lies. Ozone exceedances also tend to peak in the afternoon to evening. Because ozone levels can exceed thresholds for either one-hour or eight-hour average ozone, we expect two peaks in ozone exceedance as a function of hour. The one-hour peak occurs around 4 PM (16:00) when the temperature is highest. The peak of eight-hour average ozone occurs around 7 or 8 PM (19:00 or 20:00), after eight hours of relatively high ozone levels. These peaks can be seen in Figure \ref{fig:legislated_ozone_hour}.
+
+\vspace{-5mm}
+\begin{figure}[H]
+  \begin{center}
+  \includegraphics[width=.6\textwidth]{legis_legend}
+
+ \vspace{-2mm}
+
+   \begin{subfigure}[b]{.32\textwidth}
+      \includegraphics[width=\textwidth]{ozone_bymonth}
+      \subcaption{$\text{O}_{3}$ exceedance by month}
+   \end{subfigure}
+      \begin{subfigure}[b]{.32\textwidth}
+      \includegraphics[width=\textwidth]{pm10_bymonth}
+      \subcaption{$\text{PM}_{10}$ exceedance by month}\label{fig:legislated_pm}
+   \end{subfigure}
+     \begin{subfigure}[b]{.32\textwidth}
+     \includegraphics[width=\textwidth]{ozone_byhour}
+      \subcaption{Time of day $\text{O}_{3}$ exceeded}\label{fig:legislated_ozone_hour}
+   \end{subfigure}
+  \end{center}
+  \vspace{-4mm}
+       \caption{Posterior predictive means for the proportion of hours of exceedance as function of month and hour of the day. }\label{fig:legislated}
+\end{figure}
+
+\section{Conclusions and Future Work}\label{sec:conc}
+
+We have discussed the monitoring network for ozone and $\text{PM}_{10}$ within Mexico City and proposed a joint spatiotemporal model for ozone and $\text{PM}_{10}$ concentrations. This model was used to predict future pollutant concentrations. Our predictions were then used to obtain derived distributions for regional maxima of ozone and $\text{PM}_{10}$ which are needed to determine Mexico City's pollution emergency phases. Additionally, our predictions are used to assess compliance with MAAQS. We find that predicted risk of pollution emergency is rare and are predicted for only a few periods of 2017. By contrast, we demonstrate that predicted exceedance of Mexico's ambient air quality standards is common.
+
+In future work, we will attempt to operationalize our model so that it can be used in practice. This would require real time (hourly) fitting of the model as new measurements are available. Our modeling is amenable to sequential updating as well as possible parallelization though considerable optimization remains before this could be implemented in practice. Once implemented, our model could warn of potential pollution emergencies or compliance issues, allowing regional and city-wide adjustments, warnings, responses, and decision-making to be made earlier. Our model could also incorporate weather information to perhaps more accurately forecast pollutant levels farther ahead than our one-hour-ahead predictions.
+
+%\section*{Acknowledgments}
+
+%\bibliographystyle{rss}
+%\bibliographystyle{environmetrics}
+\bibliography{refs}
+
+\appendix
+
+%\section{Proof for Theorem \ref{thm:expcov}}\label{app:proof1}
+%
+%\begin{proof}
+%
+%For jointly normal random variables, conditional independence gives sparsity in the precision matrix which allows us to factor the joint distribution. That is, for $(w(t_1),...,w(t_n))$ with covariance $\Sigma$, if $w(t_m) \perp \{w(t_k) : k \notin \{m-1,m,m+1 \}  \} \; | \;  w(t_{m-1}),w(t_{m+1})$, then $\Sigma^{-1}_{m,k} = 0 \; \forall  \;  k \notin \{m-1,m,m+1 \}$.
+%
+%For convenience, we denote $w(t_i) = w_i$. We define $\bw_{N(m)} = (w_{m-1},w_{m+1})^T$ to be the neighbors of $w_m$ and $\bw_{-N(m)} = (w_1,...,w_{m-2},w_m,w_{m+2},...,w_n)^T$. To index $-N(m)$, we write $k_i \in \{1,...,m-2,m,m+2,...,n\}$ for $i \in \{1,...,n-2 \}$. Without loss of generality, we take $\sigma^2 = 1$. By conditional normal covariance, we define
+%\begin{align*}
+%S^{(m)} =& \text{Cov} \left(\bw_{-N(m)} | \bw_{N(m)}\right)  \\ &= \text{Cov} \left(\bw_{-N(m)}\right) - \text{Cov} \left(\bw_{-N(m)} ,\bw_{N(m)}\right) \text{Cov} \left(\bw_{N(m)}\right) \text{Cov} \left(\bw_{-N(m)} ,\bw_{N(m)}\right)^T \\
+%&= A - B C B^T,
+%\end{align*}
+%where
+%\begin{align*}
+%A_{ij} &= e^{\rho|t_{k_i} - t_{k_j}|)} \\
+%B_{ik} &= \begin{cases}
+%e^{\rho|t_{k_i} - t_{m-1}|)} \qquad \text{ if k = 1} \\
+%e^{\rho|t_{k_i} - t_{m+1}|)} \qquad \text{ if k = 2}
+% \end{cases} \\
+% C &= \begin{pmatrix}
+%  1 & e^{ - \rho (t_{m+1} - t_{m-1})} \\
+%  e^{ - \rho (t_{m+1} - t_{m-1})}  & 1
+% \end{pmatrix}^{-1} \\
+% &= \frac{1}{1 - e^{-2 \rho(t_{m+1} - t_{m-1}) }} \begin{pmatrix}
+%  1 & -e^{ - \rho (t_{m+1} - t_{m-1})} \\
+%  -e^{ - \rho (t_{m+1} - t_{m-1})}  & 1
+% \end{pmatrix}
+%\end{align*}
+%
+%Then, we consider $(m-1)^\text{th}$ row (or column) of the conditional matrix \[ \text{Cov} \left(\bw_{-N(m)} | \bw_{N(m)}\right)\], i.e. the conditional covariances of $w_m$ given its neighbors -- $\text{Cov}( w_m , \bw_{-N(m)} | \bw_{N(m)})$. Specifically, we examine ${S_m}_{m-1,j}$ for $j \neq m-1$. By rules of matrix multiplication,
+%\begin{align*}
+%S^{(m)}_{m-1,j} &= A_{m-1,j} - [B_{j,1}(B_{m-1,2} C_{1,2} + B_{m-1,1}C_{1,1} ) + B_{j,2}( B_{m-1,2} C_{2,2} + B_{m-1,1}C_{1,2} )] \\
+%&= A_{m-1,j} - \frac{1}{1 - e^{-2 \rho(t_{m+1} - t_{m-1}) }}[(e^{-\rho(t_{m+1} - t_{m})} - e^{-\rho(t_{m+1} + t_{m} - 2t_{m-1} )} )e^{-\rho |t_{k_j} - t_{m+1} |} \\
+%&+ (e^{-\rho(t_{m+1} - t_{m})} - e^{-\rho(2t_{m+1} - t_{m} - t_{m-1} )})e^{-\rho|t_{k_j} - t_{m-1}|}] \\
+%\end{align*}
+%Because we are not interested in the case that $k_j = m$ and are conditioning on $w_{m-1}$ and $w_{m+1}$, we consider two cases:
+%
+%\textbf{If $k_j > m+1$:}
+%{\scriptsize
+%\begin{align*}
+%S^{(m)}_{m-1,j} &= e^{-\rho(t_m - t_{k_j})} - \frac{e^{-\rho(t_{k_j} - t_{m})} - e^{-\rho(t_{k_j} + t_{m} - 2t_{m-1} )} }{1 - e^{-2 \rho(t_{m+1} - t_{m-1}) }} - \\
+%& \frac{e^{-\rho(t_{k_j} + t_{m} - 2t_{m-1})} - e^{-\rho(t_{k_j} + 2t_{m+1} - t_{m} - 2t_{m-1} )}}{1 - e^{-2 \rho(t_{m+1} - t_{m-1}) }} \\
+%& = e^{-\rho(t_m - t_{k_j})} - \frac{e^{-\rho(t_{k_j} - t_{m})} - e^{-\rho(t_{k_j} + 2t_{m+1} - t_{m} - 2t_{m-1} )}}{1 - e^{-2 \rho(t_{m+1} - t_{m-1}) }} \\
+%&= e^{-\rho(t_m - t_{k_j})} - \frac{e^{-\rho(t_m - t_{k_j})}(1 - e^{-2 \rho(t_{m+1} - t_{m-1}) }) }{1 - e^{-2 \rho(t_{m+1} - t_{m-1}) }} \\
+%&= e^{-\rho(t_m - t_{k_j})} - e^{-\rho(t_m - t_{k_j})} = 0
+%\end{align*}
+%}
+%\textbf{If $k_j < m-1$:}
+%{\scriptsize
+%\begin{align*}
+%{S_m}_{m-1,j} &= e^{-\rho( t_m- t_{k_j} )} - \frac{e^{-\rho(2t_{m+1}-t_{k_j} - t_{m})} - e^{-\rho(2t_{m+1}-t_{k_j} + t_{m} - 2t_{m-1} )} }{1 - e^{-2 \rho(t_{m+1} - t_{m-1}) }} - \\
+%&\frac{e^{-\rho(t_m - t_{k_j} )} - e^{-\rho( 2t_{m+1}-t_{k_j}  - t_{m} )} }{1 - e^{-2 \rho(t_{m+1} - t_{m-1}) }} \\
+%&= e^{-\rho( t_{k_j} - t_m)} - \frac{- e^{-\rho(2t_{m+1}-t_{k_j} + t_{m} - 2t_{m-1} )} + e^{-\rho(t_m - t_{k_j} )} }{1 - e^{-2 \rho(t_{m+1} - t_{m-1}) }}\\
+%&= e^{-\rho( t_{k_j} - t_m)} - \frac{e^{-\rho( t_{k_j} - t_m)}(1 - e^{-2 \rho(t_{m+1} - t_{m-1}) })}{1 - e^{-2 \rho(t_{m+1} - t_{m-1}) }}\\
+%&= e^{-\rho( t_{k_j} - t_m)} -e^{-\rho( t_{k_j} - t_m)} = 0\\
+%\end{align*}
+%}
+%Thus, for any $m$, we have shown that \[w(t_m) \perp \{w(t_k) : k \notin \{m-1,m,m+1 \}  \} \; | \;  w(t_{m-1}),w(t_{m+1}),\] which implies that $\Sigma^{-1}_{m,k} = 0 \; \forall  \;  k \notin \{m-1,m,m+1 \}$. This gives us the desired sparseness in the precision matrix.
+%
+%The second step is to establish the form of the joint distribution. For any joint distribution $f(\bw)$, it can be rewritten as $f(\bw) = f(w_1)\prod_{i=1}^n f(w_i|\{w_j : j <i\})$. Given the structure of the precision matrix, this reduces to $f(\bw) = f(w_1)\prod_{i=1}^n f(w_i|w_{i-1})$, and each conditional distribution can be determined using conditional normal theory. And in particular, this becomes
+%\begin{equation*}
+%f(\bw) = N\left[ w(t_1); 0,\sigma^2 \right] \prod_{i=2}^n N \left[ w(t_i); e^{-\rho\Delta t_i } w(t_{i-1} ), \sigma^2 \left( 1 - e^{-2\rho\Delta t_i } \right)\right].
+%\end{equation*}
+%
+%\end{proof}
+%\section{Full Conditional Distributions for autoregressive GP Model}\label{app:gibbs2}
+%
+%We give the full conditional distributions for the model specified in Section \ref{sec:gp_ar}. For this section, let $\theta | \cdots$ indicate the full conditional distribution of $\theta$, where $\theta$ is an arbitrary parameter. For several quantities, we combine site-specific variables as was done in Appendix \ref{app:gibbs1}. In addition to previous terms, we also let $\bL(t) = \text{blockdiag}(\bL_i{t})$ and $\bgamma_k = (\bgamma_{k1} ,...,\bgamma_{k N_s})^T$. The full conditional distributions for this model are provided below.
+%
+%\begin{align*}
+%\sigma^2_1 | \cdots &\sim IG(a^*_{\sigma_1},b^*_{\sigma_1}) \\
+%\sigma^2_2 | \cdots &\sim IG(a^*_{\sigma_2},b^*_{\sigma_2}) \\
+%\beta_{1i} | \cdots &\sim N(V_{\beta_{1i} }^* m_{\beta_{1i} }^* , V_{\beta_{1i} }^*) \\
+%\beta_{2i} | \cdots &\sim N(V_{\beta_{2i} }^* m_{\beta_{2i} }^* , V_{\beta_{2i} }^*) \\
+%\beta_{01} | \cdots &\sim N(V_{\beta_{01} }^* m_{\beta_{01} }^* , V_{\beta_{01} }^*) \\
+%\beta_{02} | \cdots &\sim N(V_{\beta_{02} }^* m_{\beta_{02} }^* , V_{\beta_{02} }^*) \\
+%\Sigma_{\beta_{1}} | \cdots &\sim IW(M_{\beta_{1}}^*,\nu^*_{\beta_{1}}) \\
+%\Sigma_{\beta_{2}}  | \cdots &\sim IW(M_{\beta_{2}}^*,\nu_{\beta_{2}}^*) \\
+%\gamma_{1i} | \cdots &\sim N(V_{\gamma_{1i} }^* m_{\gamma_{1i} }^* , V_{\gamma_{1i} }^*) \\
+%\gamma_{2i} | \cdots &\sim N(V_{\gamma_{2i} }^* m_{\gamma_{2i} }^* , V_{\gamma_{2i} }^*) \\
+%\gamma_{01} | \cdots &\sim N(V_{\gamma_{01} }^* m_{\gamma_{01} }^* , V_{\gamma_{01} }^*) \\
+%\gamma_{02} | \cdots &\sim N(V_{\gamma_{02} }^* m_{\gamma_{02} }^* , V_{\gamma_{02} }^*) \\
+%\Sigma_{\gamma_{1}} | \cdots &\sim IW(M_{\gamma_1}^*,\nu^*_{\gamma_1}) \\
+%\Sigma_{\gamma_{2}}  | \cdots &\sim IW(M_{\gamma_2}^*,\nu_{\gamma_2}^*) \\
+%\bV_1 | \cdots &\sim N(V_{V_1}^* m_{V_1}^* , V_{V_1}^*) \\
+%\bV_2 | \cdots &\sim N(V_{V_2}^* m_{V_2}^* , V_{V_2}^*) \\
+%\tau^2_1 | \cdots &\sim IG(a^*_{\tau_1},b^*_{\tau_1}) \\
+%\tau^2_2 | \cdots &\sim IG(a^*_{\tau_2},b^*_{\tau_2}) \\
+%a^{(\psi)}_{12} | \cdots &\sim N(V_{\psi}^* m_{\psi}^* , V_{\psi}^*)  \\
+%W_{1i}(t) | \cdots &\sim N(V_{W_{1i}(t)}^* m_{W_{1i}(t)}^* , V_{W_{1i}(t)}^*) \\
+%W_{2i}(t) | \cdots &\sim N(V_{W_{2i}(t)}^* m_{W_{2i}(t)}^* , V_{W_{2i}(t)}^*) \\
+%a^{(\eta)}_{12} | \cdots &\sim N(V_{\eta}^* m_{\eta}^* , V_{\eta}^*)  \\
+%\lambda_{ki} | \cdots &\sim IG(a_{\lambda_{ki}^*}, b_{\lambda_{ki}}^*) \\
+%\end{align*}
+%with
+%{\footnotesize
+%\begin{align*}
+%a^*_{\sigma_1} &= a_{\sigma_1} + \frac{N_s \times N_t}{2}\\
+%b^*_{\sigma_1} &= b_{\sigma_1} + \frac{1}{2} \sum_{t=1}^{N_t} \sum_{i=1}^{N_s} (Y^{O}_{it} - \bx_{it}^T \bbeta_{1i}-{\bL^{O}_{it}}^T\bgamma_{1i} - a_{11}^{(\psi)} V_{1i} - a_{11}^{(\eta)} W_{1i}(t) )^2 \\
+%a^*_{\sigma_2} &= a_{\sigma_2} + \frac{N_s \times N_t}{2}\\
+%b^*_{\sigma_2} &= b_{\sigma_2} + \frac{1}{2} \sum_{t=1}^{N_t} \sum_{i=1}^{N_s} (Y^{PM}_{it} - \bx_{it}^T \bbeta_{2i} -{\bL^{PM}_{it}}^T\bgamma_{2i} - a_{12}^{(\psi)} V_{1i}- a_{22}^{(\psi)} V_{2i} - a_{12}^{(\eta)} W_{1i}(t)- a_{22}^{(\eta)} W_{2i}(t) )^2 \\
+%m_{\beta_{1i} }^* &= \Sigma_{\beta_1}^{-1} \beta_{01} + \frac{1}{\sigma^2_1} \sum^{N_t}_{t=1} \bx_{it} (Y^{O}_{it}- {\bL^{O}_{it}}^T\bgamma_{1i} - a_{11}^{(\psi)} V_{1i} - a_{11}^{(\eta)} W_{1i}(t) )   \\
+%V_{\beta_{1i} }^* &= \left( \Sigma_{\beta_1}^{-1} + \frac{1}{\sigma_1^2} \sum^{N_t}_{t=1} \bx_{it} \bx_{it}^T  \right)^{-1} \\
+%m_{\beta_{2i} }^* &= \Sigma_{\beta_2}^{-1} \beta_{02} + \frac{1}{\sigma^2_2} \sum^{N_t}_{t=1} \bx_{it} (Y^{PM}_{it} - {\bL^{PM}_{it}}^T\bgamma_{2i} - a_{12}^{(\psi)} V_{1i}- a_{22}^{(\psi)} V_{2i} - a_{12}^{(\eta)} W_{1i}(t)- a_{22}^{(\eta)} W_{2i}(t) )   \\ \\
+%V_{\beta_{2i} }^* &= \left( \Sigma_{\beta_2}^{-1} + \frac{1}{\sigma_2^2} \sum^{N_t}_{t=1} \bx_{it} \bx_{it}^T  \right)^{-1} \\
+%m_{\beta_{01} }^* &= \bS_{\beta_1}^{-1} \bm_{\beta_1} +  \sum_{i=1}^{N_s}  \Sigma_{\beta_1}^{-1} \bbeta_{1i} \\
+%V_{\beta_{01} }^* &= \left( N_s \Sigma_{\beta_1}^{-1}  + \bS_{\beta_1}^{-1} \right)^{-1} \\
+%m_{\beta_{02} }^* &= \bS_{\beta_2}^{-1} \bm_{\beta_2} +  \sum_{i=1}^{N_s}  \Sigma_{\beta_2}^{-1} \bbeta_{2i}  \\
+%V_{\beta_{02} }^* &= \left( N_s \Sigma_{\beta_2}^{-1}  + \bS_{\beta_2}^{-1} \right)^{-1}  \\
+%M_{\beta_1}^* &= M_{\beta_1} + \sum_{i=1}^{N_s} (\bbeta_{1i} - \bbeta_{01}) (\bbeta_{1i} - \bbeta_{01})^T \\
+%\nu_{\beta_1}^* &= N_s + \nu_{\beta_1} \\
+%M_{\beta_2}^* &=  M_{\beta_2} + \sum_{i=1}^{N_s} (\bbeta_{2i} - \bbeta_{02}) (\bbeta_{2i} - \bbeta_{02})^T \\
+%\nu_{\beta_2}^* &= N_s + \nu_{\beta_2} \\
+%m_{\gamma_{1i} }^* &= \Sigma_{\gamma_1}^{-1} \bgamma_{01} + \frac{1}{\sigma^2_1} \sum^{N_t}_{t=1} {\bL^{O}_{it}} (Y^{O}_{it}- \bx_{it}^T\bbeta_{1i} - a_{11}^{(\psi)} V_{1i} - a_{11}^{(\eta)} W_{1i}(t) )   \\
+%V_{\gamma_{1i} }^* &= \left( \Sigma_{\gamma_1}^{-1} + \frac{1}{\sigma_1^2} \sum^{N_t}_{t=1} {\bL^{O}_{it}} {\bL^{O}_{it}}^T  \right)^{-1} \\
+%m_{\gamma_{2i} }^* &= \Sigma_{\gamma_2}^{-1} \bgamma_{02} + \frac{1}{\sigma^2_2} \sum^{N_t}_{t=1} {\bL^{PM}_{it}} (Y^{PM}_{it} - \bx_{it}^T\bbeta_{2i} - a_{12}^{(\psi)} V_{1i}- a_{22}^{(\psi)} V_{2i} - a_{12}^{(\eta)} W_{1i}(t)- a_{22}^{(\eta)} W_{2i}(t) )   \\
+%V_{\gamma_{2i} }^* &= \left( \Sigma_{\gamma_2}^{-1} + \frac{1}{\sigma_2^2} \sum^{N_t}_{t=1} {\bL^{PM}_{it}} {\bL^{PM}_{it}}^T  \right)^{-1} \\
+%m_{\gamma_{01} }^* &= \bS_{\gamma_1}^{-1} \bm_{\gamma_1} +  \sum_{i=1}^{N_s}  \Sigma_{\gamma_1}^{-1} \bgamma_{1i} \\
+%V_{\gamma_{01} }^* &= \left( N_s \Sigma_{\gamma_1}^{-1}  + \bS_{\gamma_1}^{-1} \right)^{-1} \\
+%m_{\gamma_{02} }^* &= \bS_{\gamma_2}^{-1} \bm_{\gamma_2} +  \sum_{i=1}^{N_s}  \Sigma_{\gamma_2}^{-1} \bgamma_{2i}  \\
+%V_{\gamma_{02} }^* &= \left( N_s \Sigma_{\gamma_2}^{-1}  + \bS_{\gamma_2}^{-1} \right)^{-1}  \\
+%M_{\gamma_1}^* &= M_{\gamma_1} + \sum_{i=1}^{N_s} (\bgamma_{1i} - \bgamma_{01}) (\bgamma_{1i} - \bgamma_{01})^T \\
+%\nu_{\gamma_1}^* &= N_s + \nu_{\gamma_1} \\
+%M_{\gamma_2}^* &=  M_{\gamma_2} + \sum_{i=1}^{N_s} (\bgamma_{2i} - \bgamma_{02}) (\bgamma_{2i} - \bgamma_{02})^T \\
+%\nu_{\gamma_2}^* &= N_s + \nu_{\gamma_2} \\
+%m_{V_1}^* &= \frac{a_{11}^{(\psi)} }{\sigma^2_1} \sum_{i=1}^{N_t} (Y_t^{O} - \bX_t \bbeta_1- \bL^{O}_t\bgamma_{1} - a_{11}^{(\eta)} W_1(t) ) + \\ & \frac{a_{12}^{(\psi)} }{\sigma^2_2} \sum_{i=1}^{N_t} (Y_t^{PM} - \bX_t \bbeta_2- \bL^{PM}_t\bgamma_{2}- a_{22}^{(\psi)} \bV_2 - a_{12}^{(\eta)} W_1(t) - a_{22}^{(\eta)} W_2(t)  )  \\
+%V_{V_1}^* &= \left( \frac{Q_1}{\tau_1^2} + \frac{{a_{11}^{(\psi)}}^2 N_t }{\sigma^2_1} + \frac{{a_{12}^{(\psi)}}^2 N_t }{\sigma^2_2} \right)^{-1} \\
+%m_{V_2}^* &= \frac{a_{22}^{(\psi)} }{\sigma^2_2} \sum_{i=1}^{N_t} (Y_t^{PM} - \bX_t \bbeta_2-\bL^{PM}_t\bgamma_{2}- a_{12}^{(\psi)} \bV_1 - a_{12}^{(\eta)} W_1(t) - a_{22}^{(\eta)} W_2(t) ) \\
+%V_{V_2}^* &= \left( \frac{Q_2}{\tau_2^2}  + \frac{{a_{22}^{(\psi)}}^2 N_t }{\sigma^2_2} \right)^{-1} \\
+%a^*_{\tau_1} &=  N_s /2  + a_{\tau_1} \\
+%b^*_{\tau_1} &= b_{\tau_1} + \frac{1}{2} \bV_1^T Q_1 \bV_1 \\
+%a^*_{\tau_2} &=  N_s /2  + a_{\tau_2} \\
+%b^*_{\tau_2} &= b_{\tau_2} + \frac{1}{2} \bV_2^T Q_2 \bV_2 \\
+% m_{\psi}^* &=\frac{m_\psi}{s^2_\psi} + \frac{1}{\sigma^2_2} \sum^{N_t}_{t=1} \sum^{N_s}_{i=1} V_{1i} (Y^{PM}_{it} - {\bL^{PM}_{it}}^T\bgamma_{2i}- \bx_{it}^T \beta_{2i} - a^{(\psi)}_{22} V_{2i} - a_{12}^{(\eta)} W_{1i}(t) - a_{22}^{(\eta)} W_{2i}(t) )\\
+%V_{\psi}^* &= \left( \frac{1}{s^2_\psi} + \frac{1}{\sigma^2_2} \sum^{N_t}_{t=1} \sum^{N_s}_{i=1} V_{1i}^2 \right)^{-1} \\
+% m_{W_{1i}(t)}^*&= \frac{a_{11}^{(\eta)}}{\sigma^2_1} (Y^{O}_{it} - \bx_{it}^T \bbeta_{1i} - {\bL^{O}_{it}}^T\bgamma_{1i} - a_{11}^{(\psi)} V_{1i} )  \\ & +\frac{a_{12}^{(\eta)}}{\sigma^2_2} (Y^{PM}_{it} - \bx_{it}^T \bbeta_{2i}- {\bL^{PM}_{it}}^T\bgamma_{2i} - a_{12}^{(\psi)} V_{1i}- a_{22}^{(\psi)} V_{2i}- a_{22}^{(\eta)} W_{2i}(t) ) \\ & + \frac{W_{1i}(t-1) e^{-\phi_{1i} \Delta_t }}{\lambda_{1i}^2 (1 - e^{-2 \phi_{1i} \Delta_{t}})  }  + \frac{W_{1i}(t+1) e^{-\phi_{1i} \Delta_{t+1} }}{ \lambda_{1i}^2 (1 - e^{-2 \phi_{1i} \Delta_{t+1}})  } \\
+%V_{W_{1i}(t)}^* &= \left( \frac{{a_{11}^{(\eta)}}^2 }{\sigma^2_1} +  \frac{{a_{12}^{(\eta)}}^2 }{\sigma^2_2} + \frac{1}{\lambda_{1i}^2 (1 - e^{-2 \phi_{1i} \Delta_{t}})} + \frac{e^{-2 \phi_{1i} \Delta_{t+1} } }{\lambda_{1i}^2 (1 - e^{-2 \phi_{1i} \Delta_{t+1}})} )  \right)^{-1} \\
+% m_{W_{2i}(t)}^*&= \frac{a_{22}^{(\eta)}}{\sigma^2_2} (Y^{PM}_{it} - \bx_{it}^T \bbeta_{2i} - {\bL^{PM}_{it}}^T\bgamma_{2i}- a_{12}^{(\psi)} V_{1i}- a_{22}^{(\psi)} V_{2i}- a_{21}^{(\eta)} W_{1i}(t) )\\ & + \frac{W_{2i}(t-1) e^{-\phi_{2i} \Delta_t }}{\lambda_{2i}^2 (1 - e^{-2 \phi_{2i} \Delta_{t}})  }  + \frac{W_{2i}(t+1) e^{-\phi_{2i} \Delta_{t+1} }}{ \lambda_{2i}^2 (1 - e^{-2 \phi_{2i} \Delta_{t+1}})  }\\
+%  V_{W_{2i}(t)}^* &= \left( \frac{{a_{22}^{(\eta)}}^2 }{\sigma^2_2} + \frac{1}{\lambda_{2i}^2 (1 - e^{-2 \phi_{2i} \Delta_{t}})} + \frac{e^{-2 \phi_{2i} \Delta_{t+1} }}{\lambda_{2i}^2 (1 - e^{-2 \phi_{2i} \Delta_{t}})}    \right)^{-1}  \\
+% m_{\eta}^* &= \frac{m_\eta}{s^2_\eta} + \frac{1}{\sigma^2_2} \sum^{N_t}_{t=1} \sum^{N_s}_{i=1} W_{1i}(t) (Y^{PM}_{it} - \bx_{it}^T \beta_{2i}- {\bL^{PM}_{it}}^T\bgamma_{2i}- a_{12}^{(\eta)} V_{1i} - a^{(\psi)}_{22} V_{2i} - a_{22}^{(\eta)} W_{2i}(t) )\\
+%V_{\eta}^* &= \left( \frac{1}{s^2_\eta} + \frac{1}{\sigma^2_2} \sum^{N_t}_{t=1} \sum^{N_s}_{i=1} W_{1i}(t)^2 \right)^{-1} \\
+%a_{\lambda_{ki}}^* &= a_{\lambda_{ki}} + \frac{N_t}{2} \\
+%b_{\lambda_{ki}}^* &= b_{\lambda_{ki}} + \frac{1}{2}\sum_{t=1}^{N_t} \frac{1}{\left( 1 - e^{-2\rho\Delta t_i } \right)} \left( w(t_{i} ) - e^{-\rho\Delta t_i } w(t_{i-1} )\right)^2 \\
+%m_{\beta_{1i} }^* &= \Sigma_{\beta_1}^{-1} \beta_{01} + \frac{1}{\sigma^2_1} \sum^{N_t}_{t=1} \bx_{it} (Y^{O}_{it}- {\bL^{O}_{it}}^T\bgamma_{1i} - a_{11}^{(\psi)} V_{1i} - a_{11}^{(\eta)} W_{1i}(t) )   \\
+%\end{align*}
+%}
+
+\section{Full Conditional Distributions for AR Model}\label{app:gibbs3}
+
+We give the full conditional distributions for the model specified in Section \ref{sec:model}. We give some additional details here to clarify model fitting. Because $\bV_1$ and $\bV_2$ are independent \emph{a priori}, the joint prior distribution for $\bV_1$ and $\bV_2$ is
+\begin{equation}
+[\bV_1,\bV_2 ] \propto \exp\left(- \frac{1}{2 } \bV_1^T Q \bV_1  \right) \exp\left(- \frac{1}{2 } \bV_2^T Q \bV_2 \right).
+\end{equation}
+The induced joint prior distribution of $\begin{pmatrix}
+\bpsi_{1} \\ \bpsi_{2} \end{pmatrix}$, where $\bpsi_1 = (\psi_{11},\psi_{12},...,\psi_{1N_s} )^T$ and $\bpsi_2 = (\psi_{21},\psi_{22},...,\psi_{2N_s} )^T$, is used for model fitting and can be represented as
+\begin{align}
+&[\bpsi_1,\bpsi_2 |A_\psi] = [\bpsi_1 | A_\psi] [\bpsi_2 | \bpsi_1,A_\psi] \nonumber \\
+&\propto \exp\left(- \frac{1}{2 {a_{11}^{(\psi)}}^2 }  \bpsi_1^T Q \bpsi_1  \right) \exp\left(- \frac{1}{2 {a_{22}^{(\psi)}}^2 } \left(\bpsi_2 - \frac{a_{12}^{(\psi)}}{a_{11}^{(\psi)}} \bpsi_1 \right)^T Q \left(\bpsi_2 - \frac{a_{12}^{(\psi)}}{a_{11}^{(\psi)}} \bpsi_1 \right) \right) .
+\end{align}
+
+For this section, let $\theta | \cdots$ indicate the full conditional distribution of $\theta$, where $\theta$ is an arbitrary parameter. For several quantities, we combine site-specific variables. For example, let $Y_t^O = (Y_{1t}^O,...,Y_{N_s t}^O)^T$, $Y_t^{PM} = (Y_{1t}^{PM},...,Y_{N_s t}^{PM})^T$, $\bX_t = \text{blockdiag}(\bx_{it} )$ and $\bbeta_k = (\bbeta_{k1} ,...,\bbeta_{k N_s})^T$. In addition to previous terms, we also let $\bL_t = \text{blockdiag}(\bL_{it})$ and $\bgamma_k = (\bgamma_{k1} ,...,\bgamma_{k N_s})^T$. The full conditional distributions for this model are provided below.
+\begin{equation*}
+\begin{aligned}[l]
+\beta_{1i} | \cdots &\sim N(V_{\beta_{1i} }^* m_{\beta_{1i} }^* , V_{\beta_{1i} }^*) \\
+\beta_{2i} | \cdots &\sim N(V_{\beta_{2i} }^* m_{\beta_{2i} }^* , V_{\beta_{2i} }^*) \\
+\beta_{01} | \cdots &\sim N(V_{\beta_{01} }^* m_{\beta_{01} }^* , V_{\beta_{01} }^*) \\
+\beta_{02} | \cdots &\sim N(V_{\beta_{02} }^* m_{\beta_{02} }^* , V_{\beta_{02} }^*) \\
+\Sigma_{\beta_{1}} | \cdots &\sim IW(M_{\beta_{1}}^*,\nu^*_{\beta_{1}}) \\
+\Sigma_{\beta_{2}}  | \cdots &\sim IW(M_{\beta_{2}}^*,\nu_{\beta_{2}}^*)
+\end{aligned}
+\hspace{6mm}
+\begin{aligned}[l]
+\gamma_{1i} | \cdots &\sim N(V_{\gamma_{1i} }^* m_{\gamma_{1i} }^* , V_{\gamma_{1i} }^*) \\
+\gamma_{2i} | \cdots &\sim N(V_{\gamma_{2i} }^* m_{\gamma_{2i} }^* , V_{\gamma_{2i} }^*) \\
+\gamma_{01} | \cdots &\sim N(V_{\gamma_{01} }^* m_{\gamma_{01} }^* , V_{\gamma_{01} }^*) \\
+\gamma_{02} | \cdots &\sim N(V_{\gamma_{02} }^* m_{\gamma_{02} }^* , V_{\gamma_{02} }^*) \\
+\Sigma_{\gamma_{1}} | \cdots &\sim IW(M_{\gamma_1}^*,\nu^*_{\gamma_1}) \\
+\Sigma_{\gamma_{2}}  | \cdots &\sim IW(M_{\gamma_2}^*,\nu_{\gamma_2}^*)
+\end{aligned}
+\hspace{6mm}
+\begin{aligned}[l]
+\sigma^2_1 | \cdots &\sim IG(a^*_{\sigma_1},b^*_{\sigma_1}) \\
+\sigma^2_2 | \cdots &\sim IG(a^*_{\sigma_2},b^*_{\sigma_2}) \\
+\bV_1 | \cdots &\sim N(V_{V_1}^* m_{V_1}^* , V_{V_1}^*) \\
+\bV_2 | \cdots &\sim N(V_{V_2}^* m_{V_2}^* , V_{V_2}^*) \\
+{a^{(\psi)}_{11}}^2  | \cdots &\sim IG(a_{a_1}^*,b_{a_1}^*), \\
+{a^{(\psi)}_{22}}^2 | \cdots   &\sim IG(a_{a_2}^*,b_{a_2}^*), \\
+a^{(\psi)}_{12} | \cdots &\sim N(V_{\psi}^* m_{\psi}^* , V_{\psi}^*)
+\end{aligned}
+\end{equation*}
+with
+{\footnotesize
+\begin{align*}
+a^*_{\sigma_1} &= 1 + \frac{N_s \times N_t}{2}\\
+b^*_{\sigma_1} &= 1 + \frac{1}{2} \sum_{t=1}^{N_t} \sum_{i=1}^{N_s} (Y^{O}_{it} - \bx_{it}^T \bbeta_{1i}-{\bL^{O}_{it}}^T\bgamma_{1i} - a_{11}^{(\psi)} V_{1i}  )^2 \\
+a^*_{\sigma_2} &= 1 + \frac{N_s \times N_t}{2}\\
+b^*_{\sigma_2} &= 1 + \frac{1}{2} \sum_{t=1}^{N_t} \sum_{i=1}^{N_s} (Y^{PM}_{it} - \bx_{it}^T \bbeta_{2i} -{\bL^{PM}_{it}}^T\bgamma_{2i} - a_{12}^{(\psi)} V_{1i}- a_{22}^{(\psi)} V_{2i}  )^2 \\
+m_{\beta_{1i} }^* &= \Sigma_{\beta_1}^{-1} \beta_{01} + \frac{1}{\sigma^2_1} \sum^{N_t}_{t=1} \bx_{it} (Y^{O}_{it}- {\bL^{O}_{it}}^T\bgamma_{1i} - a_{11}^{(\psi)} V_{1i} )   \\
+V_{\beta_{1i} }^* &= \left( \Sigma_{\beta_1}^{-1} + \frac{1}{\sigma_1^2} \sum^{N_t}_{t=1} \bx_{it} \bx_{it}^T  \right)^{-1} \\
+m_{\beta_{2i} }^* &= \Sigma_{\beta_2}^{-1} \beta_{02} + \frac{1}{\sigma^2_2} \sum^{N_t}_{t=1} \bx_{it} (Y^{PM}_{it} - {\bL^{PM}_{it}}^T\bgamma_{2i} - a_{12}^{(\psi)} V_{1i}- a_{22}^{(\psi)} V_{2i}  )   \\ \\
+V_{\beta_{2i} }^* &= \left( \Sigma_{\beta_2}^{-1} + \frac{1}{\sigma_2^2} \sum^{N_t}_{t=1} \bx_{it} \bx_{it}^T  \right)^{-1} \\
+m_{\beta_{01} }^* &=  \sum_{i=1}^{N_s}  \Sigma_{\beta_1}^{-1} \bbeta_{1i} \\
+V_{\beta_{01} }^* &= \left( N_s \Sigma_{\beta_1}^{-1}  + 10^{-3} \, \bI \right)^{-1} \\
+m_{\beta_{02} }^* &=  \sum_{i=1}^{N_s}  \Sigma_{\beta_2}^{-1} \bbeta_{2i}  \\
+V_{\beta_{02} }^* &= \left( N_s \Sigma_{\beta_2}^{-1}  + 10^{-3} \, \bI \right)^{-1}  \\
+M_{\beta_1}^* &= 10^{3} \, \bI + \sum_{i=1}^{N_s} (\bbeta_{1i} - \bbeta_{01}) (\bbeta_{1i} - \bbeta_{01})^T \\
+\nu_{\beta_1}^* &= N_s + p + 1 \\
+M_{\beta_2}^* &=  10^{3} \, \bI + \sum_{i=1}^{N_s} (\bbeta_{2i} - \bbeta_{02}) (\bbeta_{2i} - \bbeta_{02})^T \\
+\nu_{\beta_2}^* &= N_s + p + 1 \\
+m_{\gamma_{1i} }^* &= \Sigma_{\gamma_1}^{-1} \bgamma_{01} + \frac{1}{\sigma^2_1} \sum^{N_t}_{t=1} {\bL^{O}_{it}} (Y^{O}_{it}- \bx_{it}^T\bbeta_{1i} - a_{11}^{(\psi)} V_{1i} )   \\
+V_{\gamma_{1i} }^* &= \left( \Sigma_{\gamma_1}^{-1} + \frac{1}{\sigma_1^2} \sum^{N_t}_{t=1} {\bL^{O}_{it}} {\bL^{O}_{it}}^T  \right)^{-1} \\
+m_{\gamma_{2i} }^* &= \Sigma_{\gamma_2}^{-1} \bgamma_{02} + \frac{1}{\sigma^2_2} \sum^{N_t}_{t=1} {\bL^{PM}_{it}} (Y^{PM}_{it} - \bx_{it}^T\bbeta_{2i} - a_{12}^{(\psi)} V_{1i}- a_{22}^{(\psi)} V_{2i} )   \\
+\Sigma_{\gamma_{2i} }^* &= \left( \Sigma_{\gamma_2}^{-1} + \frac{1}{\sigma_2^2} \sum^{N_t}_{t=1} {\bL^{PM}_{it}} {\bL^{PM}_{it}}^T  \right)^{-1} \\
+m_{\gamma_{01} }^* &=  \sum_{i=1}^{N_s}  \Sigma_{\gamma_1}^{-1} \bgamma_{1i} \\
+V_{\gamma_{01} }^* &= \left( N_s \Sigma_{\gamma_1}^{-1}  +10^{-3} \, \bI \right)^{-1} \\
+m_{\gamma_{02} }^* &=  \sum_{i=1}^{N_s}  \Sigma_{\gamma_2}^{-1} \bgamma_{2i}  \\
+V_{\gamma_{02} }^* &= \left( N_s \Sigma_{\gamma_2}^{-1}  + 10^{-3} \, \bI \right)^{-1}  \\
+M_{\gamma_1}^* &=10^{3} \, \bI + \sum_{i=1}^{N_s} (\bgamma_{1i} - \bgamma_{01}) (\bgamma_{1i} - \bgamma_{01})^T \\
+\nu_{\gamma_1}^* &= N_s + n_{1l} + 1 \\
+M_{\gamma_2}^* &= 10^{3} \, \bI + \sum_{i=1}^{N_s} (\bgamma_{2i} - \bgamma_{02}) (\bgamma_{2i} - \bgamma_{02})^T \\
+\nu_{\gamma_2}^* &= N_s + n_{2l} + 1 \\
+m_{V_1}^* &= \frac{a_{11}^{(\psi)} }{\sigma^2_1} \sum_{i=1}^{N_t} (Y_t^{O} - \bX_t \bbeta_1- \bL^{O}_t\bgamma_{1} ) + \\ & \frac{a_{12}^{(\psi)} }{\sigma^2_2} \sum_{i=1}^{N_t} (Y_{t}^{PM} - \bX_t \bbeta_2- \bL^{PM}_t\bgamma_{2}- a_{22}^{(\psi)} \bV_2  )  \\
+V_{V_1}^* &= \left( Q_1 + \left[\frac{{a_{11}^{(\psi)}}^2 N_t }{\sigma^2_1} + \frac{{a_{12}^{(\psi)}}^2 N_t }{\sigma^2_2} \right] \bI \right)^{-1} \\
+m_{V_2}^* &= \frac{a_{22}^{(\psi)} }{\sigma^2_2} \sum_{i=1}^{N_t} (Y_t^{PM} - \bX_t \bbeta_2-\bL^{PM}_t\bgamma_{2}- a_{12}^{(\psi)} \bV_1 ) \\
+V_{V_2}^* &= \left( Q_2  + \bI \frac{{a_{22}^{(\psi)}}^2 N_t }{\sigma^2_2} \right)^{-1} \\
+a^*_{a_1} &= 1 + N_s /2  \\
+b^*_{a_1} &= 1 + \frac{1}{2} \bpsi_1^T Q_1 \bpsi_1 \\
+a^*_{a_2} &= 1 + N_s /2   \\
+b^*_{a_2} &= 1+ \frac{1}{2} \left(\bpsi_2 - \frac{a_{12}^{(\psi)}}{a_{11}^{(\psi)}} \bpsi_1 \right)^T Q \left(\bpsi_2 - \frac{a_{12}^{(\psi)}}{a_{11}^{(\psi)}} \bpsi_1 \right) \\
+ m_{\psi}^* &= \frac{1}{\sigma^2_2} \sum^{N_t}_{t=1} \sum^{N_s}_{i=1} V_{1i} (Y^{PM}_{it} - {\bL^{PM}_{it}}^T\bgamma_{2i}- \bx_{it}^T \beta_{2i} - a^{(\psi)}_{22} V_{2i}  )\\
+V_{\psi}^* &= \left( 10^{-3} + \frac{1}{\sigma^2_2} \sum^{N_t}_{t=1} \sum^{N_s}_{i=1} V_{1i}^2 \right)^{-1}
+\end{align*}
+}
+
+\section{Full Conditional Distributions for Heteroscedastic AR Model}\label{app:gibbs4}
+
+We rely on some of the details presented in Appendix \ref{app:gibbs3} for the CAR terms. We give the full conditional distributions for the heteroscedastic model specified in Section \ref{sec:model} where the variance is a function of the hour of the day $h(t)$. For this section, let $\theta | \cdots$ indicate the full conditional distribution of $\theta$, where $\theta$ is an arbitrary parameter. We again combine several quantities for site-specific variables. Let $Y_t^O = (Y_{1t}^O,...,Y_{N_s t}^O)^T$, $Y_t^{PM} = (Y_{1t}^{PM},...,Y_{N_s t}^{PM})^T$, $\bX_t = \text{blockdiag}(\bx_{it} )$ and $\bbeta_k = (\bbeta_{k1} ,...,\bbeta_{k N_s})^T$. In addition to previous terms, we also let $\bL_t = \text{blockdiag}(\bL_{it})$ and $\bgamma_k = (\bgamma_{k1} ,...,\bgamma_{k N_s})^T$. The full conditional distributions for this model are provided below. If posterior parameters are not given below, then they are identical to those given for the homoscedastic model in Appendix \ref{app:gibbs3}.
+\begin{equation*}
+\begin{aligned}[l]
+\beta_{1i} | \cdots &\sim N(V_{\beta_{1i} }^* m_{\beta_{1i} }^* , V_{\beta_{1i} }^*) \\
+\beta_{2i} | \cdots &\sim N(V_{\beta_{2i} }^* m_{\beta_{2i} }^* , V_{\beta_{2i} }^*) \\
+\beta_{01} | \cdots &\sim N(V_{\beta_{01} }^* m_{\beta_{01} }^* , V_{\beta_{01} }^*) \\
+\beta_{02} | \cdots &\sim N(V_{\beta_{02} }^* m_{\beta_{02} }^* , V_{\beta_{02} }^*) \\
+\Sigma_{\beta_{1}} | \cdots &\sim IW(M_{\beta_{1}}^*,\nu^*_{\beta_{1}}) \\
+\Sigma_{\beta_{2}}  | \cdots &\sim IW(M_{\beta_{2}}^*,\nu_{\beta_{2}}^*)
+\end{aligned}
+\hspace{6mm}
+\begin{aligned}[l]
+\gamma_{1i} | \cdots &\sim N(V_{\gamma_{1i} }^* m_{\gamma_{1i} }^* , V_{\gamma_{1i} }^*) \\
+\gamma_{2i} | \cdots &\sim N(V_{\gamma_{2i} }^* m_{\gamma_{2i} }^* , V_{\gamma_{2i} }^*) \\
+\gamma_{01} | \cdots &\sim N(V_{\gamma_{01} }^* m_{\gamma_{01} }^* , V_{\gamma_{01} }^*) \\
+\gamma_{02} | \cdots &\sim N(V_{\gamma_{02} }^* m_{\gamma_{02} }^* , V_{\gamma_{02} }^*) \\
+\Sigma_{\gamma_{1}} | \cdots &\sim IW(M_{\gamma_1}^*,\nu^*_{\gamma_1}) \\
+\Sigma_{\gamma_{2}}  | \cdots &\sim IW(M_{\gamma_2}^*,\nu_{\gamma_2}^*)
+\end{aligned}
+\hspace{6mm}
+\begin{aligned}[l]
+\sigma^2_{1 q} | \cdots &\sim IG(a^*_{\sigma_{1 q}},b^*_{\sigma_{1 q} }) \\
+\sigma^2_{2q} | \cdots &\sim IG(a^*_{\sigma_{2q}},b^*_{\sigma_{2q}}) \\
+\bV_1 | \cdots &\sim N(V_{V_1}^* m_{V_1}^* , V_{V_1}^*) \\
+\bV_2 | \cdots &\sim N(V_{V_2}^* m_{V_2}^* , V_{V_2}^*) \\
+{a^{(\psi)}_{11}}^2  | \cdots &\sim IG(a_{a_1}^*,b_{a_1}^*), \\
+{a^{(\psi)}_{22}}^2 | \cdots   &\sim IG(a_{a_2}^*,b_{a_2}^*), \\
+a^{(\psi)}_{12} | \cdots &\sim N(V_{\psi}^* m_{\psi}^* , V_{\psi}^*)  \\
+\end{aligned}
+\end{equation*}
+with
+
+{\footnotesize
+\begin{align*}
+a^*_{\sigma_{1 q}} &= 1 + \frac{N_s \times N_t}{2 N_h }\\
+b^*_{\sigma_{1 q}} &= 1 + \frac{1}{2} \sum_{t=1}^{N_t} \sum_{i=1}^{N_s} (Y^{O}_{it} - \bx_{it}^T \bbeta_{1i}-{\bL^{O}_{it}}^T\bgamma_{1i} - a_{11}^{(\psi)} V_{1i}  )^2 \bone( h(t) = q) \\
+a^*_{\sigma_{2 q}} &= 1 + \frac{N_s \times N_t}{2 N_h}\\
+b^*_{\sigma_{2 q}} &= 1 + \frac{1}{2} \sum_{t=1}^{N_t} \sum_{i=1}^{N_s} (Y^{PM}_{it} - \bx_{it}^T \bbeta_{2i} -{\bL^{PM}_{it}}^T\bgamma_{2i} - a_{12}^{(\psi)} V_{1i}- a_{22}^{(\psi)} V_{2i}  )^2\bone( h(t) = q) \\
+m_{\beta_{1i} }^* &= \Sigma_{\beta_1}^{-1} \beta_{01} + \sum^{N_t}_{t=1} \frac{1}{\sigma^2_{1h(t)} }  \bx_{it} (Y^{O}_{it}- {\bL^{O}_{it}}^T\bgamma_{1i} - a_{11}^{(\psi)} V_{1i} )   \\
+V_{\beta_{1i} }^* &= \left( \Sigma_{\beta_1}^{-1} + \sum^{N_t}_{t=1}\frac{1}{\sigma^2_{1h(t)} }  \bx_{it} \bx_{it}^T  \right)^{-1} \\
+m_{\beta_{2i} }^* &= \Sigma_{\beta_2}^{-1} \beta_{02} +\sum^{N_t}_{t=1} \frac{1}{\sigma^2_{2h(t)} } \bx_{it} (Y^{PM}_{it} - {\bL^{PM}_{it}}^T\bgamma_{2i} - a_{12}^{(\psi)} V_{1i}- a_{22}^{(\psi)} V_{2i}  )   \\ \\
+V_{\beta_{2i} }^* &= \left( \Sigma_{\beta_2}^{-1} +\sum^{N_t}_{t=1}  \frac{1}{\sigma^2_{2h(t)} }\bx_{it} \bx_{it}^T  \right)^{-1} \\
+%m_{\beta_{01} }^* &= \bS_{\beta_1}^{-1} \bm_{\beta_1} +  \sum_{i=1}^{N_s}  \Sigma_{\beta_1}^{-1} \bbeta_{1i} \\
+%V_{\beta_{01} }^* &= \left( N_s \Sigma_{\beta_1}^{-1}  + \bS_{\beta_1}^{-1} \right)^{-1} \\
+%m_{\beta_{02} }^* &= \bS_{\beta_2}^{-1} \bm_{\beta_2} +  \sum_{i=1}^{N_s}  \Sigma_{\beta_2}^{-1} \bbeta_{2i}  \\
+%V_{\beta_{02} }^* &= \left( N_s \Sigma_{\beta_2}^{-1}  + \bS_{\beta_2}^{-1} \right)^{-1}  \\
+%M_{\beta_1}^* &= M_{\beta_1} + \sum_{i=1}^{N_s} (\bbeta_{1i} - \bbeta_{01}) (\bbeta_{1i} - \bbeta_{01})^T \\
+%\nu_{\beta_1}^* &= N_s + \nu_{\beta_1} \\
+%M_{\beta_2}^* &=  M_{\beta_2} + \sum_{i=1}^{N_s} (\bbeta_{2i} - \bbeta_{02}) (\bbeta_{2i} - \bbeta_{02})^T \\
+%\nu_{\beta_2}^* &= N_s + \nu_{\beta_2} \\
+m_{\gamma_{1i} }^* &= \Sigma_{\gamma_1}^{-1} \bgamma_{01} + \sum^{N_t}_{t=1}  \frac{1}{\sigma^2_{1h(t)} } {\bL^{O}_{it}} (Y^{O}_{it}- \bx_{it}^T\bbeta_{1i} - a_{11}^{(\psi)} V_{1i} )   \\
+V_{\gamma_{1i} }^* &= \left( \Sigma_{\gamma_1}^{-1} + \sum^{N_t}_{t=1} \frac{1}{\sigma^2_{1h(t)} } {\bL^{O}_{it}} {\bL^{O}_{it}}^T  \right)^{-1} \\
+m_{\gamma_{2i} }^* &= \Sigma_{\gamma_2}^{-1} \bgamma_{02} + \sum^{N_t}_{t=1}  \frac{1}{\sigma^2_{2h(t)} }{\bL^{PM}_{it}} (Y^{PM}_{it} - \bx_{it}^T\bbeta_{2i} - a_{12}^{(\psi)} V_{1i}- a_{22}^{(\psi)} V_{2i} )   \\
+V_{\gamma_{2i} }^* &= \left( \Sigma_{\gamma_2}^{-1} + \sum^{N_t}_{t=1} \frac{1}{\sigma^2_{2h(t)} } {\bL^{PM}_{it}} {\bL^{PM}_{it}}^T  \right)^{-1} \\
+%m_{\gamma_{01} }^* &= \bS_{\gamma_1}^{-1} \bm_{\gamma_1} +  \sum_{i=1}^{N_s}  \Sigma_{\gamma_1}^{-1} \bgamma_{1i} \\
+%V_{\gamma_{01} }^* &= \left( N_s \Sigma_{\gamma_1}^{-1}  + \bS_{\gamma_1}^{-1} \right)^{-1} \\
+%m_{\gamma_{02} }^* &= \bS_{\gamma_2}^{-1} \bm_{\gamma_2} +  \sum_{i=1}^{N_s}  \Sigma_{\gamma_2}^{-1} \bgamma_{2i}  \\
+%V_{\gamma_{02} }^* &= \left( N_s \Sigma_{\gamma_2}^{-1}  + \bS_{\gamma_2}^{-1} \right)^{-1}  \\
+%M_{\gamma_1}^* &= M_{\gamma_1} + \sum_{i=1}^{N_s} (\bgamma_{1i} - \bgamma_{01}) (\bgamma_{1i} - \bgamma_{01})^T \\
+%\nu_{\gamma_1}^* &= N_s + \nu_{\gamma_1} \\
+%M_{\gamma_2}^* &=  M_{\gamma_2} + \sum_{i=1}^{N_s} (\bgamma_{2i} - \bgamma_{02}) (\bgamma_{2i} - \bgamma_{02})^T \\
+%\nu_{\gamma_2}^* &= N_s + \nu_{\gamma_2} \\
+m_{V_1}^* &=  a_{11}^{(\psi)}  \sum_{t=1}^{N_t}   \frac{1}{\sigma^2_{1h(t)} }(Y_t^{O} - \bX_t \bbeta_1- \bL^{O}_t\bgamma_{1} ) + \\ & a_{12}^{(\psi)} \sum_{t=1}^{N_t} \frac{1}{\sigma^2_{2h(t)} } (Y_t^{PM} - \bX_t \bbeta_2- \bL^{PM}_t\bgamma_{2}- a_{22}^{(\psi)} \bV_2  )  \\
+V_{V_1}^* &= \left( Q_1 + \left[{a_{11}^{(\psi)}}^2 \frac{N_t}{N_h} \sum_{q=1}^{24} \sigma^2_{1q} + {a_{12}^{(\psi)}}^2 \frac{ N_t }{N_h} \sum_{q=1}^{24} \sigma^2_{2q} \right] \bI \right)^{-1} \\
+m_{V_2}^* &= \frac{a_{22}^{(\psi)} }{\sigma^2_2} \sum_{i=1}^{N_t} (Y_t^{PM} - \bX_t \bbeta_2-\bL^{PM}_t\bgamma_{2}- a_{12}^{(\psi)} \bV_1 ) \\
+V_{V_2}^* &= \left( Q_2 + \bI {a_{22}^{(\psi)}}^2 \frac{ N_t }{N_h} \sum_{q=1}^{24} \sigma^2_{2q} \right)^{-1} \\
+%a^*_{a_1} &=  N_s /2  + a_{a_1} \\
+%b^*_{a_1} &= b_{a_1} + \frac{1}{2} \bpsi_1^T Q_1 \bpsi_1 \\
+%a^*_{a_2} &=  N_s /2  + a_{a_2} \\
+%b^*_{a_2} &= b_{a_2} + \frac{1}{2} \left(\bpsi_2 - \frac{a_{12}^{(\psi)}}{a_{11}^{(\psi)}} \bpsi_1 \right)^T Q \left(\bpsi_2 - \frac{a_{12}^{(\psi)}}{a_{11}^{(\psi)}} \bpsi_1 \right) \\
+ m_{\psi}^* &= \sum^{N_t}_{t=1} \frac{1}{\sigma^2_{2h(t)} } \sum^{N_s}_{i=1}  V_{1i} (Y^{PM}_{it} - {\bL^{PM}_{it}}^T\bgamma_{2i}- \bx_{it}^T \beta_{2i} - a^{(\psi)}_{22} V_{2i}  )\\
+V_{\psi}^* &= \left( 10^{-3} +  \sum^{N_t}_{t=1} \frac{1}{\sigma^2_{2h(t)} }  \sum^{N_s}_{i=1} V_{1i}^2 \right)^{-1}
+\end{align*}
+}
+%\section{Full Conditional Distributions for GP Model}\label{app:gibbs1}
+%
+%We give the full conditional distributions for the model specified in Section \ref{sec:gp}. For this section, let $\theta | \cdots$ indicate the full conditional distribution of $\theta$, where $\theta$ is an arbitrary parameter. For several quantities, we combine site-specific variables. For example, we denote $W_1(t) = (W_{11},W_{12},...,W_{1N_s})^T$. Similarly, let $\bX(t) = \text{blockdiag}(\bx_i{t})$ and $\bbeta_k = (\bbeta_{k1} ,...,\bbeta_{k N_s})^T$. Lastly, we define $\Delta_{t} =  \text{time}_{t} - \text{time}_{t - 1}$.
+%
+%\begin{align*}
+%\sigma^2_1 | \cdots &\sim IG(a^*_{\sigma_1},b^*_{\sigma_1}) \\
+%\sigma^2_2 | \cdots &\sim IG(a^*_{\sigma_2},b^*_{\sigma_2}) \\
+%\beta_{1i} | \cdots &\sim N(V_{\beta_{1i} }^* m_{\beta_{1i} }^* , V_{\beta_{1i} }^*) \\
+%\beta_{2i} | \cdots &\sim N(V_{\beta_{2i} }^* m_{\beta_{2i} }^* , V_{\beta_{2i} }^*) \\
+%\beta_{01} | \cdots &\sim N(V_{\beta_{01} }^* m_{\beta_{01} }^* , V_{\beta_{01} }^*) \\
+%\beta_{02} | \cdots &\sim N(V_{\beta_{02} }^* m_{\beta_{02} }^* , V_{\beta_{02} }^*) \\
+%\Sigma_{\beta_{1}} | \cdots &\sim IW(M_1^*,\nu^*_1) \\
+%\Sigma_{\beta_{2}}  | \cdots &\sim IW(M_2^*,\nu_2^*) \\
+%\bV_1 | \cdots &\sim N(V_{V_1}^* m_{V_1}^* , V_{V_1}^*) \\
+%\bV_2 | \cdots &\sim N(V_{V_2}^* m_{V_2}^* , V_{V_2}^*) \\
+%\tau^2_1 | \cdots &\sim IG(a^*_{\tau_1},b^*_{\tau_1}) \\
+%\tau^2_2 | \cdots &\sim IG(a^*_{\tau_2},b^*_{\tau_2}) \\
+%a^{(\psi)}_{12} | \cdots &\sim N(V_{\psi}^* m_{\psi}^* , V_{\psi}^*)  \\
+%W_{1i}(t) | \cdots &\sim N(V_{W_{1i}(t)}^* m_{W_{1i}(t)}^* , V_{W_{1i}(t)}^*) \\
+%W_{2i}(t) | \cdots &\sim N(V_{W_{2i}(t)}^* m_{W_{2i}(t)}^* , V_{W_{2i}(t)}^*) \\
+%a^{(\eta)}_{12} | \cdots &\sim N(V_{\eta}^* m_{\eta}^* , V_{\eta}^*)  \\
+%\lambda_{ki} | \cdots &\sim IG(a_{\lambda_{ki}^*}, b_{\lambda_{ki}}^*)
+%\end{align*}
+%with
+%{ \footnotesize
+%\begin{align*}
+%a^*_{\sigma_1} &= a_{\sigma_1} + \frac{N_s \times N_t}{2}\\
+%b^*_{\sigma_1} &= b_{\sigma_1} + \frac{1}{2} \sum_{t=1}^{N_t} \sum_{i=1}^{N_s} (Y^{O}_{it} - \bx_{it}^T \bbeta_{1i} - a_{11}^{(\psi)} V_{1i} - a_{11}^{(\eta)} W_{1i}(t) )^2 \\
+%a^*_{\sigma_2} &= a_{\sigma_2} + \frac{N_s \times N_t}{2}\\
+%b^*_{\sigma_2} &= b_{\sigma_2} + \frac{1}{2} \sum_{t=1}^{N_t} \sum_{i=1}^{N_s} (Y^{PM}_{it} - \bx_{it}^T \bbeta_{2i} - a_{12}^{(\psi)} V_{1i}- a_{22}^{(\psi)} V_{2i} - a_{12}^{(\eta)} W_{1i}(t)- a_{22}^{(\eta)} W_{2i}(t) )^2 \\
+%m_{\beta_{1i} }^* &= \Sigma_{\beta_1}^{-1} \beta_{01} + \frac{1}{\sigma^2_1} \sum^{N_t}_{t=1} \bx_{it} (Y^{O}_{it} - a_{11}^{(\psi)} V_{1i} - a_{11}^{(\eta)} W_{1i}(t) )   \\
+%V_{\beta_{1i} }^* &= \left( \Sigma_{\beta_1}^{-1} + \frac{1}{\sigma_1^2} \sum^{N_t}_{t=1} \bx_{it} \bx_{it}^T  \right)^{-1} \\
+%m_{\beta_{2i} }^* &= \Sigma_{\beta_2}^{-1} \beta_{02} + \frac{1}{\sigma^2_2} \sum^{N_t}_{t=1} \bx_{it} (Y^{PM}_{it} - a_{12}^{(\psi)} V_{1i}- a_{22}^{(\psi)} V_{2i} - a_{12}^{(\eta)} W_{1i}(t)- a_{22}^{(\eta)} W_{2i}(t) )   \\ \\
+%V_{\beta_{2i} }^* &= \left( \Sigma_{\beta_2}^{-1} + \frac{1}{\sigma_2^2} \sum^{N_t}_{t=1} \bx_{it} \bx_{it}^T  \right)^{-1} \\
+%m_{\beta_{01} }^* &= \bS_{\beta_1}^{-1} \bm_{\beta_1} +  \sum_{i=1}^{N_s}  \Sigma_{\beta_1}^{-1} \bbeta_{1i} \\
+%V_{\beta_{01} }^* &= \left( N_s \Sigma_{\beta_1}^{-1}  + \bS_{\beta_1}^{-1} \right)^{-1} \\
+%m_{\beta_{02} }^* &= \bS_{\beta_2}^{-1} \bm_{\beta_2} +  \sum_{i=1}^{N_s}  \Sigma_{\beta_2}^{-1} \bbeta_{2i}  \\
+%V_{\beta_{02} }^* &= \left( N_s \Sigma_{\beta_2}^{-1}  + \bS_{\beta_2}^{-1} \right)^{-1}  \\
+%M_1^* &= M_1 + \sum_{i=1}^{N_s} (\bbeta_{1i} - \bbeta_{01}) (\bbeta_{1i} - \bbeta_{01})^T \\
+%\nu_1^* &= N_s + \nu_1 \\
+%M_2^* &=  M_2 + \sum_{i=1}^{N_s} (\bbeta_{2i} - \bbeta_{02}) (\bbeta_{2i} - \bbeta_{02})^T \\
+%\nu_2^* &= N_s + \nu_2 \\
+%m_{V_1}^* &= \frac{a_{11}^{(\psi)} }{\sigma^2_1} \sum_{i=1}^{N_t} (Y_t^{O} - \bX_t \bbeta_1 - a_{11}^{(\eta)} W_1(t) ) + \\ & \frac{a_{12}^{(\psi)} }{\sigma^2_2} \sum_{i=1}^{N_t} (Y_t^{PM} - \bX_t \bbeta_2- a_{22}^{(\psi)} \bV_2 - a_{12}^{(\eta)} W_1(t) - a_{22}^{(\eta)} W_2(t)  )  \\
+%V_{V_1}^* &= \left( \frac{Q_1}{\tau_1^2} + \frac{{a_{11}^{(\psi)}}^2 N_t }{\sigma^2_1} + \frac{{a_{12}^{(\psi)}}^2 N_t }{\sigma^2_2} \right)^{-1} \\
+%m_{V_2}^* &= \frac{a_{22}^{(\psi)} }{\sigma^2_2} \sum_{i=1}^{N_t} (Y_t^{PM} - \bX_t \bbeta_2- a_{12}^{(\psi)} \bV_1 - a_{12}^{(\eta)} W_1(t) - a_{22}^{(\eta)} W_2(t) ) \\
+%V_{V_2}^* &= \left( \frac{Q_2}{\tau_2^2}  + \frac{{a_{22}^{(\psi)}}^2 N_t }{\sigma^2_2} \right)^{-1} \\
+%a^*_{\tau_1} &=  N_s /2  + a_{\tau_1} \\
+%b^*_{\tau_1} &= b_{\tau_1} + \frac{1}{2} \bV_1^T Q_1 \bV_1 \\
+%a^*_{\tau_2} &=  N_s /2  + a_{\tau_2} \\
+%b^*_{\tau_2} &= b_{\tau_2} + \frac{1}{2} \bV_2^T Q_2 \bV_2 \\
+% m_{\psi}^* &=\frac{m_\psi}{s^2_\psi} + \frac{1}{\sigma^2_2} \sum^{N_t}_{t=1} \sum^{N_s}_{i=1} V_{1i} (Y^{PM}_{it} - \bx_{it}^T \beta_{2i} - a^{(\psi)}_{22} V_{2i} - a_{12}^{(\eta)} W_{1i}(t) - a_{22}^{(\eta)} W_{2i}(t) )\\
+%V_{\psi}^* &= \left( \frac{1}{s^2_\psi} + \frac{1}{\sigma^2_2} \sum^{N_t}_{t=1} \sum^{N_s}_{i=1} V_{1i}^2 \right)^{-1} \\
+% m_{W_{1i}(t)}^*&= \frac{a_{11}^{(\eta)}}{\sigma^2_1} (Y^{O}_{it} - \bx_{it}^T \bbeta_{1i} - a_{11}^{(\psi)} V_{1i} )  \\ & +\frac{a_{12}^{(\eta)}}{\sigma^2_2} (Y^{PM}_{it} - \bx_{it}^T \bbeta_{2i} - a_{12}^{(\psi)} V_{1i}- a_{22}^{(\psi)} V_{2i}- a_{22}^{(\eta)} W_{2i}(t) ) \\ & + \frac{W_{1i}(t-1) e^{-\phi_{1i} \Delta_t }}{\lambda_{1i}^2 (1 - e^{-2 \phi_{1i} \Delta_{t}})  }  + \frac{W_{1i}(t+1) e^{-\phi_{1i} \Delta_{t+1} }}{ \lambda_{1i}^2 (1 - e^{-2 \phi_{1i} \Delta_{t+1}})  } \\
+%V_{W_{1i}(t)}^* &= \left( \frac{{a_{11}^{(\eta)}}^2 }{\sigma^2_1} +  \frac{{a_{12}^{(\eta)}}^2 }{\sigma^2_2} + \frac{1}{\lambda_{1i}^2 (1 - e^{-2 \phi_{1i} \Delta_{t}})} + \frac{e^{-2 \phi_{1i} \Delta_{t+1} } }{\lambda_{1i}^2 (1 - e^{-2 \phi_{1i} \Delta_{t+1}})} )  \right)^{-1} \\
+% m_{W_{2i}(t)}^*&= \frac{a_{22}^{(\eta)}}{\sigma^2_2} (Y^{PM}_{it} - \bx_{it}^T \bbeta_{2i} - a_{12}^{(\psi)} V_{1i}- a_{22}^{(\psi)} V_{2i}- a_{21}^{(\eta)} W_{1i}(t) )\\ & + \frac{W_{2i}(t-1) e^{-\phi_{2i} \Delta_t }}{\lambda_{2i}^2 (1 - e^{-2 \phi_{2i} \Delta_{t}})  }  + \frac{W_{2i}(t+1) e^{-\phi_{2i} \Delta_{t+1} }}{ \lambda_{2i}^2 (1 - e^{-2 \phi_{2i} \Delta_{t+1}})  }\\
+%  V_{W_{2i}(t)}^* &= \left( \frac{{a_{22}^{(\eta)}}^2 }{\sigma^2_2} + \frac{1}{\lambda_{2i}^2 (1 - e^{-2 \phi_{2i} \Delta_{t}})} + \frac{e^{-2 \phi_{2i} \Delta_{t+1} }}{\lambda_{2i}^2 (1 - e^{-2 \phi_{2i} \Delta_{t}})}    \right)^{-1}  \\
+% m_{\eta}^* &= \frac{m_\eta}{s^2_\eta} + \frac{1}{\sigma^2_2} \sum^{N_t}_{t=1} \sum^{N_s}_{i=1} W_{1i}(t) (Y^{PM}_{it} - \bx_{it}^T \beta_{2i}- a_{12}^{(\eta)} V_{1i} - a^{(\psi)}_{22} V_{2i} - a_{22}^{(\eta)} W_{2i}(t) )\\
+%V_{\eta}^* &= \left( \frac{1}{s^2_\eta} + \frac{1}{\sigma^2_2} \sum^{N_t}_{t=1} \sum^{N_s}_{i=1} W_{1i}(t)^2 \right)^{-1} \\
+%a_{\lambda_{ki}}^* &= a_{\lambda_{ki}} + \frac{N_t}{2} \\
+%b_{\lambda_{ki}}^* &= b_{\lambda_{ki}} + \frac{1}{2}\sum_{t=1}^{N_t} \frac{1}{\left( 1 - e^{-2\rho\Delta t_i } \right)} \left( w(t_{i} ) - e^{-\rho\Delta t_i } w(t_{i-1} )\right)^2
+%\end{align*}
+%}
+
+\end{document}
